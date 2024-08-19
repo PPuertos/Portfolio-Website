@@ -7,7 +7,7 @@ body {
     opacity: .9;
 }
 
-.nav-link {
+.nav-link:link, .nav-link:active, .nav-link:visited {
     color: white;
 }
 
@@ -18,10 +18,16 @@ body {
 
 #image-paco-puertos {
     mask-image: linear-gradient(
-        black 80%,
-        transparent
+        black 98%, transparent
     );
 }
+
+#image-paco-puertos:hover {
+    mask-image: linear-gradient(
+        black 100%, transparent
+    );
+}
+
 #my-name {
     border-bottom: 2px solid #A4A091;
 }
@@ -38,7 +44,7 @@ body {
     height: 100%;
 }
 
-.navbar-brand {
+.navbar-brand:link, .navbar-brand:active, .navbar-brand:visited {
     font-size: 2em;
     color: var(--bs-primary);
 }
@@ -136,8 +142,6 @@ svg:hover {
     height: 2.2em;
 }
 
-
-
 @media (min-width:768px){
     #experience-content > .col-3 > .text-dark-2 {
         writing-mode: horizontal-tb;
@@ -163,6 +167,26 @@ svg:hover {
     }
 }
 
+@media (min-width:768px) and (max-width:978px){
+    #my-name {
+        font-size: 6vw;
+    }
+
+    #main-elements > .h2 {
+        font-size: 4vw;
+    }
+}
+
+@media (min-width:321px) and (max-width:767px){
+    #my-name {
+        font-size:10vw
+    }
+
+    #main-elements > .h2 {
+        font-size: 8vw;
+    }
+}
+
   .navbar-toggler .navbar-toggler-icon {
     background-image: url('data:image/svg+xml;charset=utf8,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="%23A4A091" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
   }
@@ -170,3 +194,7 @@ svg:hover {
   .btn-close {
     filter: invert(70%) sepia(5%) saturate(250%) hue-rotate(200deg) brightness(95%) contrast(90%);
   }
+
+.project-box {
+    border-radius: 10px;
+}
