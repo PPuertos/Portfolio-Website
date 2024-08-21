@@ -18,7 +18,7 @@ body {
 
 #image-paco-puertos {
     mask-image: linear-gradient(
-        black 98%, transparent
+        black 0, transparent
     );
 }
 
@@ -58,21 +58,38 @@ body {
     padding-bottom: 20px;
     border-top: 2px solid #A4A091;
 }
-
+/* Contenedores seccion projects */
 #projects {
     padding-top: 80px;
     padding-bottom: 20px;
     border-top: 2px solid #A4A091;
 }
 
-#projects > .col-12 > .container {
+#projects > .col-12 > a > .container {
     padding: 30px;
     height: 100%;
+    border: 3px solid transparent;
+}
+
+#projects > .col-12 > a > .container:hover {
     border: 3px solid #A4A091;
+}
+
+#projects > .col-12 > a {
+    text-decoration: none;
 }
 
 #projects > .col-12 {
     padding: 20px;
+}
+
+.overlay > .p {
+    color: white;
+    position: relative;
+}
+
+.overlay > .p > p {
+    position: absolute;
 }
 
 #experience-content > .col-9 {
@@ -153,17 +170,13 @@ svg:hover {
     }
 }
 
-@media (max-width:320px){
+@media (max-width:321px){
     #my-name {
         font-size: 2em;
     }
 
-    .profession {
+    .profession{
         font-size: 1.5em;
-    }
-
-    #about-me > .h2, #projects > .h2, #experience > .h2, #contact-info > .h2 {
-        font-size: 2em;
     }
 }
 
