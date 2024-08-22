@@ -1,132 +1,266 @@
 
 /* Border in the bottom of every section*/
-.row {
-    border-bottom: 2px solid #A4A091;
+#home, #features, #value-proposition, #tech-used {
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
+/**/
+html {
+    scroll-padding-top: 80px;
+}
 /* FOR HOME SECTION */
+
+/* Height of the whole screen*/
 #home {
-    height: 96vh;
+    padding-bottom: 100px;
 }
 
-#home > .col-xl-6 > .h2 {
-    border-bottom: 2px solid #A4A091;
-}
-
-/* Portfolio Title */
-#home > .col-xl-6:first-child > .h2 {
+/* Main Title */
+#home > div > .h2 {
     color: #A4A091;
+    font-weight:200;
+    font-size: 40px;
+    text-align: start;
+    margin-bottom: 50px;
+}
+
+#home > div > .h2 > b {
+    font-weight: 600;
+}
+
+/* Main Description */
+#home > div:nth-child(1) > .p {
+    font-weight: 100;
+    font-size: 15px;
+    margin-bottom: 50px;
+}
+
+#home > div:nth-child(1) > .p > b {
+    font-weight: 700;
+}
+
+/* Image */
+#home > div:nth-child(2) {
+    border: 2px solid rgb(164, 160, 145, .8);
+    height: 90vw;
+    padding: 40px 30px;
+    border-radius: 10px;
+    overflow: hidden; /* Oculta cualquier desbordamiento de la imagen */
+    display: flex; /* Usa flexbox para centrar la imagen si es necesario */
+    justify-content: start; /* Centra horizontalmente */
+}
+
+#home > div:nth-child(2) > img {
+    height: 100%;
+    width: auto;
+    border-radius: 10px;
+}
+
+.anim {
+    position: relative;
+    transform: translateX(0); /* Estado inicial */
+    transition: transform 2s; /* Transición para el regreso al estado original */
+}
+
+.anim:hover {
+    transform: translateX(-41%); /* Estado final durante el hover */
+}
+
+/* VALUE PROPOSITION SECTION */
+#value-proposition div:first-child > .h3 {
+    font-weight: 200;
+    color: #A4A091;
+    font-size: 35px;
+    margin-bottom: 30px;
+
+}
+
+#value-proposition div:nth-child(2) > .p {
+    font-weight: 100;
+    font-size: 15px;
+}
+
+#value-proposition div:nth-child(2) > .p > b {
+    font-weight: 700;
+}
+
+#value-proposition {
+    margin-bottom: 100px;
 }
 
 /* FEATURES SECTION*/
 
-#features {
-    padding: 80px;
-}
-
-#features > .left-side > img {
-    border-radius: 20px;
-    width: 100%;
-}
-
+/* Entire Section */
 #features > .right-side {
-    padding-left: 50px;
-    margin: auto 0;
+    margin-bottom: 50px;
 }
 
-#features > .right-side > .container > .row {
-    border: 0;
-    height: 40vh;
+/* Title */
+#features > .right-side > .h3 {
+    margin-bottom: 30px;
+    font-size: 35px;
+    font-weight: 200;
 }
 
-#features > .right-side > .container > .h3 {
-    margin-bottom: 35px;
-    font-size: 2.8em;
-    border-bottom: 2px solid #A4A091;
-    color: #A4A091 !important;
+/* Main point containers */
+#features > .right-side > .row {
+    padding: 30px;
 }
 
-#features > .right-side > .container > .row > div > .title {
-    font-weight: bold;
-    font-size: 1.4em;
-    padding: 5px;
+/* Main Points */
+#features > .right-side > .row .title {
+    font-size: 25px;
+    font-weight: 280;
     text-align: center;
 }
 
-#features > .right-side > .container > .row > div > .text {
-    padding: 5px;
+/* Descriptions */
+#features > .right-side > .row .text {
     text-align: center;
-    margin-bottom: 6vw;
+    font-weight: 100;
+    font-size: 15px;
+    margin-bottom: 50px;
 }
 
-#features > .right-side > .container > .row > div > .image {
-    padding: 5px;
-    margin: 0 auto;
+/* Images */
+#features > .right-side > .row .image {
     display: flex;
     justify-content: center;
 }
 
 /* TECHNOLOGIES AND TOOLS SECTION*/
-/* Specifically for python */
-#programs > .container-fluid > .row {
-    width: 25%;
-    margin: auto;
+
+#tech-used > .h2 {
+    font-weight: 200;
+    font-size: 35px;
+    margin-bottom: 50px;
 }
 
-#core-libraries > .container-fluid > .row, #programs > .container-fluid > .row {
-    border: none;
-}
-
-#core-libraries, #programs {
-    border: 2px solid transparent;
-    border-radius: 10px;
-    height: 100%;
-    padding: 3vw;
-}
-
-/* Alignments for the whole section*/
-#core-libraries > .container-fluid > .row, #programs > .container-fluid > .row {
-    text-align: center;
-    text-justify: inter-word;
-}
-
-/* Library Boxes */
-#core-libraries > .container-fluid > .row > .col-lg-3, #programs > .container-fluid > .row > .col-12 {
-    border: 1px solid #A4A091;
-    padding: 0;
-}
-
-/* Library names */
-#core-libraries > .container-fluid > .row > .col-lg-3 > .h4, #programs > .container-fluid > .row > .col-12 > .h4 {
-    background-color: #A4A091;
-}
-
-/* Laptop (XXL and XL devices)*/
-@media (min-width:1200px) {
-    /* For home section */
-    #home {
-        height: 96vh;
-        padding: 0 88px;
+@media (min-width:768px) and (max-width:1199px) {
+    /* HOME SECTION */
+    /* Title and Description Container */
+    #home > div:first-child {
+        padding-right: 40px;
     }
 
-    #home > .col-xl-6:first-child > .p {
-        padding: 1.5vw 2vw;
-    }
-
-    #home > .col-xl-6:first-child {
-        padding-right: 78px;
-    }
-    #home > .col-xl-6 > .h2 {
-        border-bottom: 2px solid #A4A091;
+    /* Title */
+    #home > div:first-child > .h2 {
         font-size: 3em;
-        text-align: start !important;
-        padding-left: 20px;
+    }
+
+    /* Description */
+    #home > div:first-child > .p {
+        font-size: 1em;
+    }
+
+    /* Image */
+    #home > div:nth-child(2) {
+        height: 40vw;
+        margin: auto 0;
+    }
+
+    /* FEATURES SECTION */
+    /* Section Title */
+    #features > .right-side > .h3 {
+        font-size: 2.5em;
+    }
+
+    /* Main point */
+    #features > .right-side > .row .title {
+        font-size: 1.8em;
+    }
+
+    /* Description*/
+    #features > .right-side > .row .text {
+        font-size: 1.1em;
+    }
+
+    /* TRUCK IMAGE (Is just appearing when the width is larger than Medium; 992px) */
+    #features > .left-side > img {
+        border-radius: 10px;
+        width: 25vw;
+    }
+
+    #features > .right-side > .row {
+        display: flex;
+        height: 92%;
+        align-items: center;
     }
 }
 
-/* Large devices */
+/* For XL and larger width devices */
+@media (min-width:1200px) {
+    /* HOME SECTION */
+
+    /* Main Title*/
+    #home > div:first-child > .h2 {
+        font-size: 3.5em;
+    }
+
+    /* Description */
+    #home > div:first-child > .p {
+        font-size: 1.2em;
+    } 
+
+    /* Image */
+    #home > div:nth-child(3) {
+        border: 2px solid rgb(164, 160, 145, .8);
+        padding: 60px 50px;
+        border-radius: 10px;
+    }
+
+    #carouselExampleControls > .carousel-inner {
+        border-radius: 10px;
+    }
+
+    /* FEATURES SECTION */
+    /* Section Title */
+    #features > .right-side > .h3 {
+        font-size: 3.5em;
+        font-weight: 200;
+    }
+
+    /* Main point */
+    #features > .right-side > .row .title {
+        font-size: 2em;
+    }
+
+    /* Description*/
+    #features > .right-side > .row .text {
+        font-size: 1.2em;
+    }
+    #features > .left-side > img {
+        border-radius: 10px;
+        width: 25vw;
+    }
+
+    #features > .right-side > .row {
+        display: flex;
+        height: 92%;
+        align-items: center;
+    }
+
+    /* VALUE PROPOSITION SECTION */
+    #value-proposition div:first-child > .h3 {
+        font-size: 3em;
+    }
+
+    #value-proposition div:nth-child(2) > .p {
+        font-size: 1.2em;
+    }
+
+    #value-proposition {
+        margin-bottom: 100px;
+    }
+}
+
+
+
+
+/*
 @media (min-width:992px) and (max-width:1199px) {
-    /* For home section */
+
     #home {
         height: 96vh;
     }
@@ -150,7 +284,7 @@
     }
 }
 
-/* Medium Devices */
+
 @media (min-width:768px) and (max-width:991px) {
 
     #home {
@@ -167,35 +301,17 @@
     }
 }
 
-/* Phone */
+
 @media (min-width:576px) and (max-width:767px) {
-    #home {
-        height: auto;
-        padding: 0 40px;
-    }
-
-    #home > .col-xl-6:first-child > .h2 {
-        font-size: 2em;
-        margin-bottom: 40px;
-    }
-
-    #home > .col-xl-6:first-child {
-        margin-bottom: 80px;
-    }
-
-    #home > .col-xl-6:nth-child(2) {
-        padding: 0;
-        margin-bottom: 100px;
-    }
 
 }
 
-/* Extra Small Phone*/
+
 @media (max-width:575px) {
 
 }
 
-/* For maximum 991px Width Devices */
+
 @media (max-width:991px) {
     #features > .left-side > img {
         position: absolute;
@@ -206,3 +322,5 @@
         width: 100%;
     }
 }
+
+*/
