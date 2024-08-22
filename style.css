@@ -17,15 +17,10 @@ body {
 }
 
 #image-paco-puertos {
-    mask-image: linear-gradient(
-        black 0, transparent
+    mask-image: linear-gradient(to left,
+        black 90%, transparent 100%
     );
-}
-
-#image-paco-puertos:hover {
-    mask-image: linear-gradient(
-        black 100%, transparent
-    );
+    transition: mask-image 2s;
 }
 
 #my-name {
