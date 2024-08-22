@@ -117,52 +117,82 @@
         </div>
 
         <!-- Technologies and Tools Section -->
-        <div class="row bg-black text-white" id="tech-used">
+        <div class="row bg-black" id="tech-used">
             <!-- Section Name -->
-            <div class="h2 text-primary text-md-end text-center">Technologies Implemented</div>
+            <div class="h2 text-primary text-md-start text-center">Technologies Implemented</div>
             
-            <!-- Programs Box-->
-            <div class="col-sm-6 d-flex align-items-center justify-content-center justify-content-sm-end order-2 order-sm-1">
+            <!-- Programs Title -->
+            <div class="col-sm-6 col-md-4 text-center text-sm-start">
                 <div class="h3">Programs</div>
             </div>
 
-            <div class="col-sm-6 d-flex flex-column align-items-center align-items-sm-start order-1 order-sm-2" id="programs">
+            <!-- Promgrams Boxes -->
+            <div class="col-sm-6 col-md-8 text-center python">
                 <div class="h4">Python</div>
-                <img src="images/python-logo.png" width="50px" alt="python-logo">
+                <img src="images/python-logo.png" width="50" alt="python-logo">
             </div>
 
-            <!-- Section Title -->
-            <div class="h3 pb-3 text-end">Core Libraries</div>
+            <!-- Core Libraries Title -->
+             <div class="col-sm-6 col-md-4 text-center text-sm-start">
+                <div class="h3">Core Libraries</div>
+             </div>
 
-            <!-- Core Libraries Box-->
-            <div class="col-sm-12" id="core-libraries">
-                <div class="container-fluid tech_and_tools_boxes">
-
-                    <!-- Row -->
-                    <div class="row">
-                        <!--Logo Boxes -->
-                        <div class="col-lg-3 col-sm-6 inegi">
-                            <div class="h4">INEGIpy</div>
-                            <img src="images/INEGI-logo.png" height="50px" alt="INEGI-logo">
-                        </div>
-                    
-                        <div class="col-lg-3 col-sm-6 pandas">
-                            <div class="h4">Pandas</div>
-                            <img src="images/pandas-logo.ico" height="68px" alt="pandas-logo">
-                        </div>
-                        <div class="col-lg-3 col-sm-6 plotly">
-                            <div class="h4">Plotly</div>
-                            <img src="images/dash-logo.png" height="68px" alt="dash-logo">
-                        </div>
-                        <div class="col-lg-3 col-sm-6 follium">
-                            <div class="h4">Follium</div>
-                            <img src="images/folium-logo.png" height="50px" alt="folium-logo">
-                        </div>
+            <!--Core Libraries Boxes -->
+            <div class="col-sm-6 col-md-8">
+                
+                <div class="row">
+                    <div class="text-center inegi col-sm-6">
+                        <div class="h4">INEGIpy</div>
+                        <img src="images/INEGI-logo.png" height="50" alt="INEGI-logo">
                     </div>
+                
+                    <div class="text-center pandas col-sm-6">
+                        <div class="h4">Pandas</div>
+                        <img src="images/pandas-logo.ico" height="68" alt="pandas-logo">
+                    </div>
+        
+                    <div class="text-center plotly col-sm-6">
+                        <div class="h4">Plotly</div>
+                        <img src="images/dash-logo.png" height="68" alt="dash-logo">
+                    </div>
+        
+                    <div class="text-center follium col-sm-6">
+                        <div class="h4">Follium</div>
+                        <img src="images/folium-logo.png" height="50" alt="folium-logo">
+                    </div>
+                    
                 </div>
             </div>
+        </div>
 
+        <div class="row" id="tutorial">
+            <div class="h2 text-primary">
+                Steps to run it yourself
+            </div>
 
+            <div class="col-sm-6 col-md-4 text-white step">
+                <b>1. Clone the Repository:</b> Obtain a local copy of the project repository using the command `git clone https://github.com/PPuertos/Dashboard-Logistica.git`.
+            </div>
+
+            <div class="col-sm-6 col-md-4 text-white step">
+                <b>2. Install Required Libraries:</b> Install all necessary libraries by running `pip install -r requirements.txt`. This command ensures that all dependencies listed in `requirements.txt` are installed.
+            </div>
+
+            <div class="col-sm-6 col-md-4 text-white step">
+                <b>3. Run the Main Script:</b> Start the application by executing the main script with `python src/app.py`. Here, `app.py` serves as the entry point for the application.
+            </div>
+
+            <div class="col-sm-6 col-md-4 text-white step">
+                <b>4. Explore the Dashboard:</b> Access the dashboard via your web browser to interact with the map, cost panels, and business intelligence plots.
+            </div>
+
+            <div class="col-sm-6 col-md-4 text-white step">
+                <b>5. Customize Data (Optional):</b> To use your own data, create a CSV file with the columns `[trailer_id, destination]` and replace the existing data file as needed.
+            </div>
+
+            <div class="col-sm-6 col-md-4 text-white step">
+                <b>result.</b> After completing the setup, you will be able to visualize and analyze transportation routes and associated costs, providing valuable insights into route feasibility and cost efficiency.
+            </div>
         </div>
     </div>
 
@@ -179,7 +209,7 @@
                 const libraries = logistics.tech_used.programming_languages.python.libraries_used;
 
                 // INEGIpy Information
-                const coreLibrariesInegi = document.querySelector("#core-libraries > .container-fluid > .row > .inegi");
+                const coreLibrariesInegi = document.querySelector(".inegi");
 
                 const textInegi = document.createElement('div');
 
@@ -187,7 +217,7 @@
                 coreLibrariesInegi.appendChild(textInegi);
 
                 // Pandas Information
-                const coreLibrariesPandas = document.querySelector("#core-libraries > .container-fluid > .row > .pandas");
+                const coreLibrariesPandas = document.querySelector(".pandas");
 
                 const textPandas = document.createElement('div');
 
@@ -195,7 +225,7 @@
                 coreLibrariesPandas.appendChild(textPandas);
 
                 // Plotly Information
-                const coreLibrariesPlotly = document.querySelector("#core-libraries > .container-fluid > .row > .plotly");
+                const coreLibrariesPlotly = document.querySelector(".plotly");
 
                 const textPlotly = document.createElement('div');
 
@@ -203,7 +233,7 @@
                 coreLibrariesPlotly.appendChild(textPlotly);
 
                 // Follium Information
-                const coreLibrariesFollium = document.querySelector("#core-libraries > .container-fluid > .row > .follium");
+                const coreLibrariesFollium = document.querySelector(".follium");
 
                 const textFollium = document.createElement('div');
 
@@ -240,7 +270,7 @@
                     // Crear y agregar el SVG correspondiente
                     const svgContainer = document.createElement('div');
                     svgContainer.innerHTML = svgPaths[index]; // Utiliza el SVG correspondiente
-                    svgContainer.classList.add('image')
+                    svgContainer.classList.add('image');
 
                     // Añadir el SVG al div
                     div.append(svgContainer,title, text);

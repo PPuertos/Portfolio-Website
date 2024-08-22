@@ -1,14 +1,17 @@
 
 /* Border in the bottom of every section*/
-#home, #features, #value-proposition, #tech-used {
+#home, #features, #value-proposition, #tech-used, #tutorial {
     padding-left: 30px;
     padding-right: 30px;
 }
 
-/**/
+/* For spacing between Section and Navbar */
 html {
     scroll-padding-top: 80px;
 }
+
+/* FOR HOME SECTION */
+/* FOR HOME SECTION */
 /* FOR HOME SECTION */
 
 /* Height of the whole screen*/
@@ -30,7 +33,7 @@ html {
 }
 
 /* Main Description */
-#home > div:nth-child(1) > .p {
+#home > div:nth-child(1) > .p, #tutorial > .step {
     font-weight: 100;
     font-size: 15px;
     margin-bottom: 50px;
@@ -68,7 +71,10 @@ html {
 }
 
 /* VALUE PROPOSITION SECTION */
-#value-proposition div:first-child > .h3 {
+/* VALUE PROPOSITION SECTION */
+/* VALUE PROPOSITION SECTION */
+
+#value-proposition div:first-child > .h3, #tutorial > .h2 {
     font-weight: 200;
     color: #A4A091;
     font-size: 35px;
@@ -89,6 +95,8 @@ html {
     margin-bottom: 100px;
 }
 
+/* FEATURES SECTION*/
+/* FEATURES SECTION*/
 /* FEATURES SECTION*/
 
 /* Entire Section */
@@ -130,12 +138,59 @@ html {
 }
 
 /* TECHNOLOGIES AND TOOLS SECTION*/
+/* TECHNOLOGIES AND TOOLS SECTION*/
+/* TECHNOLOGIES AND TOOLS SECTION*/
 
+/* General Formatting*/
+#tech-used {
+    margin-bottom: 100px;
+}
+
+.inegi, .pandas, .plotly {
+    margin-bottom: 40px;
+}
+
+/* Whole container elements */
+.inegi, .pandas, .plotly, .follium, .python {
+    color: white;
+}
+
+/* Section Title */
 #tech-used > .h2 {
     font-weight: 200;
     font-size: 35px;
     margin-bottom: 50px;
 }
+
+/* Types of Technologies Titles */
+#tech-used > div > .h3 {
+    font-size: 25px;
+    font-weight: 280;
+    margin-bottom: 20px;
+    color: white;
+}
+
+/* Technologies */ 
+#tech-used > div > .h4, #tech-used > div > .row .h4 {
+    font-size: 25px;
+    font-weight: 200;
+}
+
+/* Technologies Description */
+#tech-used > div > .row div:nth-child(3) {
+    font-weight: 100;
+    font-size: 15px;
+}
+
+.python {
+    margin-bottom: 50px;
+}
+
+/* TUTORIAL */
+/* TUTORIAL */
+/* TUTORIAL */
+
+
 
 @media (min-width:768px) and (max-width:1199px) {
     /* HOME SECTION */
@@ -162,12 +217,12 @@ html {
 
     /* FEATURES SECTION */
     /* Section Title */
-    #features > .right-side > .h3 {
+    #features > .right-side > .h3, #tech-used > .h2, #tutorial > .h2 {
         font-size: 2.5em;
     }
 
     /* Main point */
-    #features > .right-side > .row .title {
+    #features > .right-side > .row .title, #tech-used > div > .h3 {
         font-size: 1.8em;
     }
 
@@ -176,7 +231,7 @@ html {
         font-size: 1.1em;
     }
 
-    /* TRUCK IMAGE (Is just appearing when the width is larger than Medium; 992px) */
+    /* Truck Image (Is just appearing when the width is larger than Medium; 992px) */
     #features > .left-side > img {
         border-radius: 10px;
         width: 25vw;
@@ -216,7 +271,7 @@ html {
 
     /* FEATURES SECTION */
     /* Section Title */
-    #features > .right-side > .h3 {
+    #features > .right-side > .h3, #tutorial > .h2, #tech-used > .h2 {
         font-size: 3.5em;
         font-weight: 200;
     }
