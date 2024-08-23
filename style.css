@@ -1,3 +1,111 @@
+/* GENERAL FORMATTING FOR ALL THE PAGES */
+/* GENERAL FORMATTING FOR ALL THE PAGES */
+/* GENERAL FORMATTING FOR ALL THE PAGES */
+
+/* MAIN TITLES */
+.h1 {
+    color: #A4A091;
+    font-weight:200;
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+/* MAIN TITLES <b> CONTENTS */
+.h1 > b {
+    font-weight: 600;
+}
+
+/* Subtitles */
+.h2 {
+    font-weight: 200;
+    color: #A4A091;
+    font-size: 35px;
+}
+
+/* Sub-Subtitles */
+.h3 {
+    font-size: 25px;
+    font-weight: 280;
+    text-align: center;
+}
+
+/* Sub-sub-subtitles */
+.h4 {
+    font-size: 20px;
+}
+
+/* Descriptions (smaller font) */
+.small-text {
+    font-weight: 100;
+    font-size: 15px;
+}
+
+/* Descriptions <b> contents */
+.small-text > b {
+    font-weight: 700;
+}
+
+@media (min-width:768px) and (max-width:1199px) {
+    /* GENERAL FORMATTING */
+    /* Title */
+    .h1 {
+        font-size: 3em;
+    }
+
+    /* Subtitle */
+    .h2 {
+        font-size: 2.5em;
+    }
+
+    /* Sub-title */
+    .h3 {
+        font-size: 2em;
+    }
+
+    /* Sub-sub-subtitle */
+    .h4 {
+        font-size: 1.5em;
+    }
+
+    /* Description */
+    .small-text {
+        font-size: 1em;
+    }
+}
+
+/* For XL and larger width devices */
+@media (min-width:1200px) {
+    /* GENERAL FORMATTING */
+    /* Main Title*/
+    .h1 {
+        font-size: 4em;
+    }
+
+    /* Subtitle */
+    .h2 {
+        font-size: 3.2em;
+    }
+
+    /* Sub-subtitle */
+    .h3 {
+        font-size: 2.4em;
+    }
+
+    /* Sub-sub-subtitle */
+    .h4 {
+        font-size: 1.8em;
+    }
+    
+    /* Description */
+    .small-text {
+        font-size: 1.2em;
+    } 
+}
+
+/* MAIN PAGE STYLING */
+/* MAIN PAGE STYLING */
+/* MAIN PAGE STYLING */
+
 body {
     margin-top: 80px;
     text-align: justify;
