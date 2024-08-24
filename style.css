@@ -1,6 +1,35 @@
 /* GENERAL FORMATTING FOR ALL THE PAGES */
 /* GENERAL FORMATTING FOR ALL THE PAGES */
 /* GENERAL FORMATTING FOR ALL THE PAGES */
+/* Font Syle */
+* {
+    font-family: "Manrope", sans-serif;
+  }
+
+/* Navbar Brand */
+.navbar-brand:link, .navbar-brand:active, .navbar-brand:visited {
+    font-size: 16px;
+    color: var(--bs-primary);
+}
+
+/* Navbar Links */
+.nav-link:link, .nav-link:active, .nav-link:visited {
+    font-size: 16px;
+    color: white;
+}
+
+.navbar-brand:hover {
+    color: white;
+}
+
+.navbar {
+    opacity: 1;
+}
+
+.nav-link:hover {
+    color: var(--bs-primary);
+    font-weight: 800;
+}
 
 /* MAIN TITLES */
 .h1 {
@@ -32,6 +61,7 @@
 /* Sub-sub-subtitles */
 .h4 {
     font-size: 20px;
+    font-weight: 300;
 }
 
 /* Descriptions (smaller font) */
@@ -44,6 +74,9 @@
 .small-text > b {
     font-weight: 700;
 }
+
+/* NAVBAR BRAND */
+
 
 @media (min-width:768px) and (max-width:1199px) {
     /* GENERAL FORMATTING */
@@ -111,19 +144,6 @@ body {
     text-align: justify;
 }
 
-.navbar {
-    opacity: .9;
-}
-
-.nav-link:link, .nav-link:active, .nav-link:visited {
-    color: white;
-}
-
-.nav-link:hover {
-    color: var(--bs-primary);
-    font-weight: bolder;
-}
-
 #image-paco-puertos {
     mask-image: linear-gradient(to left,
         black 90%, transparent 100%
@@ -145,15 +165,6 @@ body {
     border: 2px solid #A4A091;
     border-radius: 10px;
     height: 100%;
-}
-
-.navbar-brand:link, .navbar-brand:active, .navbar-brand:visited {
-    font-size: 2em;
-    color: var(--bs-primary);
-}
-
-.navbar-brand:hover {
-    color: white;
 }
 
 #about-me, #experience {

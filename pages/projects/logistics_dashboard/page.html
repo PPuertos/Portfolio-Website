@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Logistics Dashboard</title>
     <link rel="icon" href="../../../img/logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../../css/main.min.css">
     <link rel="stylesheet" href="../../../style.css">
     <link rel="stylesheet" href="style.css">
@@ -15,7 +18,7 @@
     <!-- Navigation Bar-->
     <nav class="navbar navbar-expand-md fixed-top bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="../../../index.html">Portfolio</a>
+            <a class="navbar-brand" href="../../../index.html">FRANCISCO PUERTOS</a>
             <button class="navbar-toggler border-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -26,11 +29,12 @@
                 </div>
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item"><a class="nav-link" aria-current="page" href="#">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#value-proposition">Value</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#tech-used">Tools</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#tutorial">Tutorial</a></li>
+                        <li class="nav-item"><a class="nav-link" aria-current="page" href="#">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#value-proposition">VALUE</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#features">FEATURES</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#tech-used">TOOLS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#dashboard">VIEW</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#tutorial">TUTORIAL</a></li>
                     </ul>
                 </div>
             </div>
@@ -192,36 +196,80 @@
             </div>
         </div>
 
-        <div class="row" id="tutorial">
-            <div class="h2 text-primary text-center text-sm-start">
-                Steps to run it yourself
+        <div class="row" id="dashboard">
+            <div class="h2">
+                Dashboard View
             </div>
 
-            <div class="col-sm-6 col-md-4 text-white small-text">
-                <b>1. Clone the Repository:</b> Obtain a local copy of the project repository using the command<div class="scroll-container">git clone https://github.com/PPuertos/Dashboard-Logistica.git</div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 text-white small-text">
-                <b>2. Install Required Libraries:</b> Install all necessary libraries by running 'pip install -r requirements.txt'. This command ensures that all dependencies listed in 'requirements.txt' are installed.
-            </div>
-
-            <div class="col-sm-6 col-md-4 text-white small-text">
-                <b>3. Run the Main Script:</b> Start the application by executing the main script with 'python src/app.py'. Here, 'app.py' serves as the entry point for the application.
-            </div>
-
-            <div class="col-sm-6 col-md-4 text-white small-text">
-                <b>4. Explore the Dashboard:</b> Access the dashboard via your web browser to interact with the map, cost panels, and business intelligence plots.
-            </div>
-
-            <div class="col-sm-6 col-md-4 text-white small-text">
-                <b>5. Customize Data (Optional):</b> To use your own data, create a CSV file with the columns '[trailer_id, destination]'' and replace the existing data file as needed.
-            </div>
-
-            <div class="col-sm-6 col-md-4 text-white small-text">
-                <b>Result:</b> After completing the setup, you will be able to visualize and analyze transportation routes and associated costs, providing valuable insights into route feasibility and cost efficiency.
+            <div class="scroll-container">
+                <div class="col-11">
+                    <p class="h4 text-white">Panel 1</p>
+                    <video autoplay loop muted playsinline width="100%" src="images/Panel-1-video.mov"></video>
+                </div>
+                <div class="col-11">
+                    <p class="h4 text-white">Panel 2</p>
+                    <video autoplay loop muted playsinline width="100%" src="images/Panel-2-video.mov"></video>
+                </div>
             </div>
         </div>
+
+    <div class="row" id="tutorial">
+        <div class="h2 text-primary text-center text-sm-start">
+            Steps to run it yourself
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="small-text text-white">
+                <p class="small-text">01</p>
+                <p class="small-text text-start">Clone the Repository</p>
+                <div>Obtain a local copy of the project repository using the command:</div>
+                <div class="scroll-container">git clone https://github.com/PPuertos/Dashboard-Logistica.git</div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="small-text text-white">
+                <p class="small-text">02</p>
+                <p class="small-text text-start">Install Required Libraries</p>
+                <div>Install all necessary libraries by running:<div class="scroll-container">pip install -r requirements.txt</div> This command ensures that all dependencies listed in 'requirements.txt' are installed.</div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="small-text text-white">
+                <p class="small-text">03</p>
+                <p class="small-text text-start">Run the Main Script</p>
+                <div>Start the application by executing the main script with 'python src/app.py'. Here, 'app.py' serves as the entry point for the application.</div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="small-text text-white">
+                <p class="small-text">04</p>
+                <p class="small-text text-start">Explore the Dashboard</p>
+                <div>Access the dashboard via your web browser to interact with the map, cost panels, and business intelligence plots.</div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="small-text text-white">
+                <p class="small-text">05</p>
+                <p class="small-text text-start">Customize Data (Optional)</p>
+                <div>To use your own data, create a CSV file with the columns '[trailer_id, destination]' and replace the existing data file as needed.</div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="small-text text-white">
+                <p class="small-text">06</p>
+                <p class="small-text text-start">Result</p>
+                <div>After completing the setup, you will be able to visualize and analyze transportation routes and associated costs, providing valuable insights into route feasibility and cost efficiency.</div>
+            </div>
+        </div>
+
     </div>
+
+</div>
 
 </body>
 </html>

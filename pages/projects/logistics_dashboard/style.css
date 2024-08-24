@@ -1,5 +1,5 @@
 /* Border in the bottom of every section*/
-#home, #features, #value-proposition, #tech-used, #tutorial {
+#home, #features, #value-proposition, #tech-used, #tutorial, #dashboard {
     padding-left: 30px;
     padding-right: 30px;
 }
@@ -10,7 +10,7 @@ html {
 }
 
 /* Height of the whole screen*/
-#home, #value-proposition, #features, #tech-used, #tutorial {
+#home, #value-proposition, #features, #tech-used, #tutorial, #dashboard {
     padding-bottom: 100px;
 }
 
@@ -89,30 +89,106 @@ html {
 /* TUTORIAL */
 /* TUTORIAL */
 /* TUTORIAL */
-
-/* Title */
-#tutorial > div:nth-child(1) {
+#tutorial > .h2 {
     margin-bottom: 50px;
 }
 
+/**/
 .scroll-container {
     margin-top: 10px;
     overflow-x: auto; /* Permite el scroll horizontal */
     white-space: nowrap; /* Evita el salto de línea en el contenido */
     padding: 10px; /* Espacio alrededor del contenido */
-    border: 2px solid rgb(164, 160, 145, .8);
+    border: 1px solid white;
+    border-radius: 12px;
+}
+
+#tutorial {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#tutorial > .col-md-6 {
+    padding: 20px;
+}
+
+#tutorial > .col-md-6 > div {
+    height: 100%;
+    background-color: rgb(164, 160, 145, .2);
+    padding: 20px;
     border-radius: 10px;
-    scrollbar-width: none; /* Firefox */
+} 
+
+#tutorial > .col-md-6 > div > p:first-child {
+    border:1px solid white;
+    border-radius: 50px;
+    line-height: 1.3em;
+    display: inline-block;
+    padding: .5em 1em;
+    font-size: 1.1em;
 }
 
-/* Padding*/
-#tutorial > div {
-    padding: 10px auto;
+#tutorial > .col-md-6 > div > p:nth-child(2) {
+    border-radius: 50px;
+    line-height: 1.3em;
+    font-size: 1.5em;
+    font-weight: 400;
 }
 
-#tutorial > .small-text:nth-child(2), #tutorial > .small-text:nth-child(3), #tutorial > .small-text:nth-child(4), #tutorial > .small-text:nth-child(5), #tutorial > .small-text:nth-child(6) {
-    margin-bottom: 30px;
+#tutorial .scroll-container {
+    margin-top: 20px;
 }
+
+#tutorial .scroll-container:nth-child(2) {
+    margin-bottom: 20px;
+}
+
+#tutorial > div:nth-child(3) .scroll-container {
+    margin-bottom: 20px;
+}
+
+/* DASHBOARD */
+/* DASHBOARD */
+/* DASHBOARD */
+
+/* Image */
+#dashboard video {
+    border-radius: 12px;
+}
+
+/* Margin between videos  */
+#dashboard .col-11:nth-child(1) {
+    margin-right: 10px;
+}
+
+/* Margin for the left */
+#dashboard .col-11:nth-child(1), #dashboard .col-11:nth-child(2) {
+    margin-left: 15px;
+}
+
+/* Margin for the right */
+#dashboard .col-11:nth-child(2) {
+    margin-right: 15px;
+}
+
+/* To make it scrollable horizontally */
+#dashboard > .scroll-container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border: none;
+    background-color: rgb(164, 160, 145, .2);
+}
+
+/* To display images horizontally */
+#dashboard > .scroll-container > div {
+    display: inline-block;
+}
+
+/* Margin for the bottom of the title*/
+#dashboard > .h2 {
+    margin-bottom: 50px;
+}
+
 
 /* SMALL AND LARGER DEVICES */
 @media (min-width:576px) {
@@ -127,6 +203,11 @@ html {
     /* Description */
     #home .small-text {
         padding-bottom: 50px;
+    }
+
+    /* VALUE PROPOSITION */
+    #value-proposition .h2 {
+        margin-bottom: 50px;
     }
 }
 
