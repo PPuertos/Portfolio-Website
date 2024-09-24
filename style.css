@@ -28,7 +28,7 @@
 
 .nav-link:hover {
     color: var(--bs-primary);
-    font-weight: 800;
+    text-decoration: overline;
 }
 
 /* MAIN TITLES */
@@ -82,7 +82,7 @@
     /* GENERAL FORMATTING */
     /* Title */
     .h1 {
-        font-size: 3em;
+        font-size: 5.4vw;
     }
 
     /* Subtitle */
@@ -172,6 +172,8 @@ body {
     padding-bottom: 20px;
     border-top: 2px solid #A4A091;
 }
+
+
 /* Contenedores seccion projects */
 #projects {
     padding-top: 80px;
@@ -183,10 +185,15 @@ body {
     padding: 30px;
     height: 100%;
     border: 3px solid transparent;
+    border: 2px solid #A4A091;
 }
 
 #projects > .col-12 > a > .container:hover {
-    border: 3px solid #A4A091;
+    text-decoration: line-through;
+}
+
+#projects > .col-12 > a > .container video {
+    border-radius: 10px;
 }
 
 #projects > .col-12 > a {

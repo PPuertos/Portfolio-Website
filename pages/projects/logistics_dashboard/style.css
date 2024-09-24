@@ -11,39 +11,25 @@ html {
 
 /* Height of the whole screen*/
 #home, #value-proposition, #features, #tech-used, #tutorial, #dashboard {
-    padding-bottom: 100px;
+    padding-bottom: 50px;
 }
 
-/* FOR HOME SECTION */
-/* FOR HOME SECTION */
-/* FOR HOME SECTION */
-
-/* Image */
-#home > div:nth-child(2) {
+/* FOR INTERACTIVE IMAGES */
+.img-container {
     border: 2px solid rgb(164, 160, 145, .8);
-    height: 90vw;
-    padding: 40px 30px;
-    border-radius: 10px;
-    overflow: hidden; /* Oculta cualquier desbordamiento de la imagen */
-    display: flex; /* Usa flexbox para centrar la imagen si es necesario */
-    justify-content: start; /* Centra horizontalmente */
+    padding: 5vw 3vw;
+    border-radius: 12px;
 }
 
-#home > div:nth-child(2) > img {
-    height: 100%;
-    width: auto;
+.img-container > img {
+    width: 100%;
     border-radius: 10px;
 }
 
-.anim {
-    position: relative;
-    transform: translateX(0); /* Estado inicial */
-    transition: transform 2s; /* Transición para el regreso al estado original */
-}
+/* FOR HOME SECTION */
+/* FOR HOME SECTION */
+/* FOR HOME SECTION */
 
-.anim:hover {
-    transform: translateX(-41%); /* Estado final durante el hover */
-}
 
 /* FEATURES SECTION*/
 /* FEATURES SECTION*/
@@ -56,12 +42,6 @@ html {
 
 #features > .right-side > .row > .col-sm-6 {
     margin-bottom: 30px;
-}
-
-/* Images */
-#features > .right-side > .row .image {
-    display: flex;
-    justify-content: center;
 }
 
 /* TECHNOLOGIES AND TOOLS SECTION*/
@@ -225,12 +205,28 @@ html {
     }
 }
 
+/* LARGE AND SMALLER DEVICES */
+@media (max-width:1199px) {
+    .img-container {
+        overflow: hidden; /* Oculta cualquier desbordamiento de la imagen */
+        display: flex; /* Usa flexbox para centrar la imagen si es necesario */
+        justify-content: start; /* Centra horizontalmente */
+    }
+    
+    .img-container > img {
+        width: 120vw;
+        position: relative;
+        transform: translateX(0); /* Estado inicial */
+        transition: transform 2s; /* Transición para el regreso al estado original */
+    }
+    
+    .img-container > img:hover {
+        transform: translateX(-36vw); /* Estado final durante el hover */
+    }
+}
+
 /* MEDIUM AND LARGE DEVICES */
 @media (min-width:768px) and (max-width:1199px) {
-    /* Height of the whole screen*/
-    #home, #value-proposition, #features, #tech-used, #tutorial {
-        padding-bottom: 120px;
-    }
 
     /* HOME SECTION */
     /* Title and Description Container */
@@ -239,19 +235,17 @@ html {
     }
 
     /* Image */
-    #home > div:nth-child(2) {
-        height: 40vw;
-        margin: auto 0;
+    .img-container > img {
+        width: 50vw;
+    }
+    
+    
+    .img-container > img:hover {
+        transform: translateX(-10vw); /* Estado final durante el hover */
     }
 
     /* FEATURES SECTION */
-
-    /* Truck Image (Is just appearing when the width is larger than Medium; 992px) */
-    #features > .left-side > img {
-        border-radius: 10px;
-        width: 25vw;
-    }
-
+    
     #features > .right-side > .row {
         display: flex;
         height: 92%;
@@ -267,41 +261,26 @@ html {
 
 /* XL AND LARGER DEVICES */
 @media (min-width:1200px) {
-    /* Height of the whole screen*/
-    #home, #value-proposition, #features, #tech-used, #tutorial {
-        padding-bottom: 150px;
+
+    /* DYNAMIC IMAGES */
+    .img-container > img {
+        width: 100%;
+        height: fit-content;
     }
 
-    /* HOME SECTION */
-    /* Description */
-    #home .small-text {
-        padding-bottom: 50px;
-    }
-
-    /* Image */
-    #home > div:nth-child(3) {
-        border: 2px solid rgb(164, 160, 145, .8);
-        padding: 60px 50px;
-        border-radius: 10px;
-    }
-
-    #carouselExampleControls > .carousel-inner {
-        border-radius: 10px;
+    /**/
+    #home > div:nth-child(1) > div:nth-child(2) {
+        margin-bottom: 50px;
     }
 
     /* FEATURES SECTION */
-
-    #features > .left-side > img {
-        border-radius: 10px;
-        width: 25vw;
-    }
-
     #features > .right-side > .row {
         display: flex;
         height: 92%;
         align-items: center;
     }
 
+    /* VALUE PROPOSITION */
     #value-proposition {
         margin-bottom: 100px;
     }
