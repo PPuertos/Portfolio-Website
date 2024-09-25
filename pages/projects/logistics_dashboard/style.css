@@ -319,3 +319,7 @@ html {
         padding-right: 5px;
     }
 }
+
+.img-container img {
+    height: auto;
+}

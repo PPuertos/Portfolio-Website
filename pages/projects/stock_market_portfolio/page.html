@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Logistics Dashboard</title>
+    <link rel="icon" href="../../../img/logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/main.min.css">
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="../../../bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body class="bg-dark">
+    <!-- Navigation Bar-->
+    <nav class="navbar navbar-expand-md fixed-top bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../../../index.html">FRANCISCO PUERTOS</a>
+            <button class="navbar-toggler border-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title text-primary" id="offcanvasNavbarLabel">Portfolio</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item"><a class="nav-link" aria-current="page" href="#">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#value-proposition">VALUE</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#features">FEATURES</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#tech-used">TOOLS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#dashboard">VIEW</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#tutorial">TUTORIAL</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var offcanvasElement = document.getElementById('offcanvasNavbar');
+            var offcanvas = new bootstrap.Offcanvas(offcanvasElement);
+            var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            navLinks.forEach(function (link) {
+                link.addEventListener('click', function () {
+                    offcanvas.hide();
+                });
+            });
+        });
+    </script>
+
+    <div class="container-fluid">
+        
+        <!-- Home Section-->
+        <div class="row" id="home">
+
+            <!-- Main Title and Description -->
+            <div class="col-12 col-md-6 col-xl-11">
+                <div class="h1 text-start"><b>Stock Market Portfolio</b> Management Software</div>
+                <div class="p text-white small-text">Empower your investment strategies by <b>transforming</b> historical data into <b>actionable insights</b>. This autonomous software provides a seamless experience, utilizing cutting-edge algorithms to <b>maximize returns</b> and <b>minimize risks</b>, designed for both novice and seasoned investors alike.</div>
+            </div>
+
+            <!-- Images for L or smaller width devices -->
+             <div class="col-xl-12 col-md-6 img-container">
+                <img src="images/efficient_frontier.png" class="anim" onclick="this.classList.toggle('active');" alt="panel-1">
+             </div>
+        </div>
+
+        <!-- VALUE PROPOSITION SECTION-->
+         <div class="row" id="value-proposition">
+            <div class="col-md-4 text-center text-md-start"><div class="h2">Value Proposition</div></div>
+            <div class="col-md-8">
+                <div class="p text-white small-text">This platform offers a comprehensive solution for portfolio management, enabling users to <b>visualize</b> historical trends, <b>analyze</b> performance, and <b>apply predictive models</b> for smarter <b>decision-making</b>. By integrating diverse data sources, it delivers a robust toolset for <b>optimizing returns</b> and proactively <b>managing risks</b>, ensuring you <b>stay ahead</b> in dynamic market conditions.</div>
+            </div>
+         </div>
+
+
+        <!-- Features Section -->
+        <div class="h2 text-center mb-5 text-primary">Features</div>
+        <div class="row" id="features">
+
+            <!-- Main title and content -->
+            <div class="right-side col-lg-6 col-xl-12">
+                <div class="row text-white text-center">
+
+                    <div class="col-sm-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M512 96c0 50.2-59.1 125.1-84.6 155c-3.8 4.4-9.4 6.1-14.5 5L320 256c-17.7 0-32 14.3-32 32s14.3 32 32 32l96 0c53 0 96 43 96 96s-43 96-96 96l-276.4 0c8.7-9.9 19.3-22.6 30-36.8c6.3-8.4 12.8-17.6 19-27.2L416 448c17.7 0 32-14.3 32-32s-14.3-32-32-32l-96 0c-53 0-96-43-96-96s43-96 96-96l39.8 0c-21-31.5-39.8-67.7-39.8-96c0-53 43-96 96-96s96 43 96 96zM117.1 489.1c-3.8 4.3-7.2 8.1-10.1 11.3l-1.8 2-.2-.2c-6 4.6-14.6 4-20-1.8C59.8 473 0 402.5 0 352c0-53 43-96 96-96s96 43 96 96c0 30-21.1 67-43.5 97.9c-10.7 14.7-21.7 28-30.8 38.5l-.6 .7zM128 352a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM416 128a32 32 0 1 0 0-64 32 32 0 1 0 0 64z" fill="#A4A091"/></svg>
+                        <div class="h3">Top-Down Analysis</div>
+                        <div class="small-text"><b>Explore</b> your portfolio with interactive, multi-level charts, from markets to individual stocks, with <b>real-time</b> performance data.</div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="h3">Performance</div>
+                        <div class="small-text">Monitor <b>key metrics</b> such as alpha, beta, VaR, CVaR and Volatility with a focus on identifying potential <b>red flags</b> in your investments.</div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#e8eaed"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M21,8c-1.45,0-2.26,1.44-1.93,2.51l-3.55,3.56c-0.3-0.09-0.74-0.09-1.04,0l-2.55-2.55C12.27,10.45,11.46,9,10,9 c-1.45,0-2.27,1.44-1.93,2.52l-4.56,4.55C2.44,15.74,1,16.55,1,18c0,1.1,0.9,2,2,2c1.45,0,2.26-1.44,1.93-2.51l4.55-4.56 c0.3,0.09,0.74,0.09,1.04,0l2.55,2.55C12.73,16.55,13.54,18,15,18c1.45,0,2.27-1.44,1.93-2.52l3.56-3.55 C21.56,12.26,23,11.45,23,10C23,8.9,22.1,8,21,8z"/><polygon points="15,9 15.94,6.93 18,6 15.94,5.07 15,3 14.08,5.07 12,6 14.08,6.93"/><polygon points="3.5,11 4,9 6,8.5 4,8 3.5,6 3,8 1,8.5 3,9"/></g></g></svg>
+                        <div class="h3">Efficient Frontier</div>
+                        <div class="small-text"><b>Optimize investments</b> using the Markowitz model and Monte Carlo simulations to <b>maximize returns</b> and <b>minimize risk</b>.</div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zm-312 8l0 64c0 13.3 10.7 24 24 24s24-10.7 24-24l0-64c0-13.3-10.7-24-24-24s-24 10.7-24 24zm80-96l0 160c0 13.3 10.7 24 24 24s24-10.7 24-24l0-160c0-13.3-10.7-24-24-24s-24 10.7-24 24zm80 64l0 96c0 13.3 10.7 24 24 24s24-10.7 24-24l0-96c0-13.3-10.7-24-24-24s-24 10.7-24 24z" fill="#A4A091"/></svg>
+                        <div class="h3">Real Time Insights</div>
+                        <div class="small-text"><b>Stay updated</b> with stock news, top daily gainers, and most active stocks, directly in your dashboard.</div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm161.5-86.1c-12.2-5.2-26.3 .4-31.5 12.6s.4 26.3 12.6 31.5l11.9 5.1c17.3 7.4 35.2 12.9 53.6 16.3l0 50.1c0 4.3-.7 8.6-2.1 12.6l-28.7 86.1c-4.2 12.6 2.6 26.2 15.2 30.4s26.2-2.6 30.4-15.2l24.4-73.2c1.3-3.8 4.8-6.4 8.8-6.4s7.6 2.6 8.8 6.4l24.4 73.2c4.2 12.6 17.8 19.4 30.4 15.2s19.4-17.8 15.2-30.4l-28.7-86.1c-1.4-4.1-2.1-8.3-2.1-12.6l0-50.1c18.4-3.5 36.3-8.9 53.6-16.3l11.9-5.1c12.2-5.2 17.8-19.3 12.6-31.5s-19.3-17.8-31.5-12.6L338.7 175c-26.1 11.2-54.2 17-82.7 17s-56.5-5.8-82.7-17l-11.9-5.1zM256 160a40 40 0 1 0 0-80 40 40 0 1 0 0 80z" fill="#A4A091"/></svg>
+                        <div class="h3">Stock Performance Evaluation</div>
+                        <div class="small-text">Assess individual stocks with <b>trend identification</b> and essential financial metrics to gauge <b>investment potential</b>.</div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zm-312 8l0 64c0 13.3 10.7 24 24 24s24-10.7 24-24l0-64c0-13.3-10.7-24-24-24s-24 10.7-24 24zm80-96l0 160c0 13.3 10.7 24 24 24s24-10.7 24-24l0-160c0-13.3-10.7-24-24-24s-24 10.7-24 24zm80 64l0 96c0 13.3 10.7 24 24 24s24-10.7 24-24l0-96c0-13.3-10.7-24-24-24s-24 10.7-24 24z"/></svg>
+                        <div class="h3">Customized Views</div>
+                        <div class="small-text"><b>Easily adjust</b> markets and timeframes to <b>tailor</b> your portfolio experience to your specific investment strategy.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Left Side Truck Image (Just for XL or larger width screens)-->
+            <div class="col-lg-6 col-xl-12 img-container">
+                <img src="images/portfolio_performance.png" class="anim" onclick="this.classList.toggle('active');" alt="panel-1">
+             </div>
+
+        </div>
+
+        <!-- Technologies and Tools Section -->
+        <div class="row bg-black" id="tech-used">
+            <!-- Section Name -->
+            <div class="h2 text-primary text-center">Technologies Implemented</div>
+            
+            <!-- Programs Title -->
+            <div class="col-sm-6 col-md-4 text-center text-sm-start">
+                <div class="text-white h3 text-sm-start">Programs</div>
+            </div>
+
+            <!-- Promgrams Boxes -->
+            <div class="col-sm-6 col-md-8 text-center python">
+                <div class="h4">Python</div>
+                <img src="images/python-logo.png" height="50" alt="python-logo">
+            </div>
+
+            <!-- Core Libraries Title -->
+             <div class="col-sm-6 col-md-4 text-center text-sm-start">
+                <div class="h3 text-white text-sm-start">Core Libraries</div>
+             </div>
+
+            <!--Core Libraries Boxes -->
+            <div class="col-sm-6 col-md-8">
+                
+                <div class="row">
+                    <div class="text-center inegi col-sm-6">
+                        <div class="h4">INEGIpy</div>
+                        <img src="images/INEGI-logo.png" height="50" alt="INEGI-logo">
+                        <div class="small-text"><b>Extracts</b> route (GEOJSON format), freight and diesel cost data.</div>
+                        
+                    </div>
+                    <div class="text-center pandas col-sm-6">
+                        <div class="h4">Pandas</div>
+                        <img src="images/pandas-logo.ico" height="50" alt="pandas-logo">
+                        <div class="small-text">Facilitates data manipulation and <b>analysis</b>.</div>
+                    </div>
+                    <div class="text-center plotly col-sm-6">
+                        <div class="h4">Plotly</div>
+                        <img src="images/plotly-logo.png" height="50" alt="plotly-logo">
+                        <div class="small-text">Creates <b>interactive visualizations</b> and plots. Dash module powers the web-based dashboard interface.</div>
+                    </div>
+                    <div class="text-center follium col-sm-6">
+                        <div class="h4">Follium</div>
+                        <img src="images/folium-logo.png" height="50" alt="folium-logo">
+                        <div class="small-text"><b>Displays routes</b> on a map</div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="dashboard">
+            <div class="h2">
+                Website Modules
+            </div>
+
+            <div class="scroll-container">
+                <div class="col-11">
+                    <p class="h4 text-white">Home</p>
+                    <video autoplay loop muted playsinline width="100%" src="images/home_navigation_module.mov"></video>
+                </div>
+
+                <div class="col-11">
+                    <p class="h4 text-white">Purchase Records</p>
+                    <video autoplay loop muted playsinline width="100%" src="images/home_module.mov"></video>
+                </div>
+
+                <div class="col-11">
+                    <p class="h4 text-white">Portfolio</p>
+                    <video autoplay loop muted playsinline width="100%" src="images/portfolio_module.mov"></video>
+                </div>
+
+                <div class="col-11">
+                    <p class="h4 text-white">Optimization</p>
+                    <video autoplay loop muted playsinline width="100%" src="images/optimization_module.mov"></video>
+                </div>
+
+            </div>
+        </div>
+
+    <div class="row" id="tutorial">
+        <div class="h2 text-primary text-center text-sm-start">
+            Steps to run it yourself
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="small-text text-white">
+                <p class="small-text">01</p>
+                <p class="small-text text-start">Clone the Repository</p>
+                <div>Obtain a local copy of the project repository using the command:</div>
+                <div class="scroll-container">git clone https://github.com/PPuertos/Dashboard-Logistica.git</div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="small-text text-white">
+                <p class="small-text">02</p>
+                <p class="small-text text-start">Install Required Libraries</p>
+                <div>Install all necessary libraries by running:<div class="scroll-container">pip install -r requirements.txt</div> This command ensures that all dependencies listed in 'requirements.txt' are installed.</div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="small-text text-white">
+                <p class="small-text">03</p>
+                <p class="small-text text-start">Run the Main Script</p>
+                <div>Start the application by executing the main script with 'python src/app.py'. Here, 'app.py' serves as the entry point for the application.</div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="small-text text-white">
+                <p class="small-text">04</p>
+                <p class="small-text text-start">Explore the Dashboard</p>
+                <div>Access the dashboard via your web browser to interact with the map, cost panels, and business intelligence plots.</div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="small-text text-white">
+                <p class="small-text">05</p>
+                <p class="small-text text-start">Customize Data (Optional)</p>
+                <div>To use your own data, create a CSV file with the columns '[trailer_id, destination]' and replace the existing data file as needed.</div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="small-text text-white">
+                <p class="small-text">06</p>
+                <p class="small-text text-start">Result</p>
+                <div>After completing the setup, you will be able to visualize and analyze transportation routes and associated costs, providing valuable insights into route feasibility and cost efficiency.</div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
