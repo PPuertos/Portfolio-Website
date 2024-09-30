@@ -100,7 +100,7 @@
                     </div>
 
                     <div class="col-sm-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#e8eaed"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M21,8c-1.45,0-2.26,1.44-1.93,2.51l-3.55,3.56c-0.3-0.09-0.74-0.09-1.04,0l-2.55-2.55C12.27,10.45,11.46,9,10,9 c-1.45,0-2.27,1.44-1.93,2.52l-4.56,4.55C2.44,15.74,1,16.55,1,18c0,1.1,0.9,2,2,2c1.45,0,2.26-1.44,1.93-2.51l4.55-4.56 c0.3,0.09,0.74,0.09,1.04,0l2.55,2.55C12.73,16.55,13.54,18,15,18c1.45,0,2.27-1.44,1.93-2.52l3.56-3.55 C21.56,12.26,23,11.45,23,10C23,8.9,22.1,8,21,8z"/><polygon points="15,9 15.94,6.93 18,6 15.94,5.07 15,3 14.08,5.07 12,6 14.08,6.93"/><polygon points="3.5,11 4,9 6,8.5 4,8 3.5,6 3,8 1,8.5 3,9"/></g></g></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#A4A091"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M21,8c-1.45,0-2.26,1.44-1.93,2.51l-3.55,3.56c-0.3-0.09-0.74-0.09-1.04,0l-2.55-2.55C12.27,10.45,11.46,9,10,9 c-1.45,0-2.27,1.44-1.93,2.52l-4.56,4.55C2.44,15.74,1,16.55,1,18c0,1.1,0.9,2,2,2c1.45,0,2.26-1.44,1.93-2.51l4.55-4.56 c0.3,0.09,0.74,0.09,1.04,0l2.55,2.55C12.73,16.55,13.54,18,15,18c1.45,0,2.27-1.44,1.93-2.52l3.56-3.55 C21.56,12.26,23,11.45,23,10C23,8.9,22.1,8,21,8z"/><polygon points="15,9 15.94,6.93 18,6 15.94,5.07 15,3 14.08,5.07 12,6 14.08,6.93"/><polygon points="3.5,11 4,9 6,8.5 4,8 3.5,6 3,8 1,8.5 3,9"/></g></g></svg>
                         <div class="h3">Efficient Frontier</div>
                         <div class="small-text"><b>Optimize investments</b> using the Markowitz model and Monte Carlo simulations to <b>maximize returns</b> and <b>minimize risk</b>.</div>
                     </div>
@@ -137,47 +137,100 @@
         <div class="row bg-black" id="tech-used">
             <!-- Section Name -->
             <div class="h2 text-primary text-center">Technologies Implemented</div>
-            
-            <!-- Programs Title -->
-            <div class="col-sm-6 col-md-4 text-center text-sm-start">
-                <div class="text-white h3 text-sm-start">Programs</div>
-            </div>
-
-            <!-- Promgrams Boxes -->
-            <div class="col-sm-6 col-md-8 text-center python">
-                <div class="h4">Python</div>
-                <img src="images/python-logo.png" height="50" alt="python-logo">
-            </div>
-
-            <!-- Core Libraries Title -->
-             <div class="col-sm-6 col-md-4 text-center text-sm-start">
-                <div class="h3 text-white text-sm-start">Core Libraries</div>
-             </div>
 
             <!--Core Libraries Boxes -->
-            <div class="col-sm-6 col-md-8">
+            <div class="col-12">
                 
-                <div class="row">
-                    <div class="text-center inegi col-sm-6">
-                        <div class="h4">INEGIpy</div>
-                        <img src="images/INEGI-logo.png" height="50" alt="INEGI-logo">
-                        <div class="small-text"><b>Extracts</b> route (GEOJSON format), freight and diesel cost data.</div>
-                        
+                <div class="row px-0">
+
+                    <div class="text-center col-sm-6 col-lg-4 toolset-col mb-4">
+                        <div class="toolset-container">
+                            <div>
+                                <div class="h4">Python</div>
+                                <img src="images/python-logo.png" width="50" alt="python-logo">
+                            </div>
+                            <div class="small-text">Primary language for building the application, integrating data processing, analysis, and visualization libraries.</div>
+                        </div>
                     </div>
-                    <div class="text-center pandas col-sm-6">
-                        <div class="h4">Pandas</div>
-                        <img src="images/pandas-logo.ico" height="50" alt="pandas-logo">
-                        <div class="small-text">Facilitates data manipulation and <b>analysis</b>.</div>
+
+                    <div class="text-center col-sm-6 col-lg-4 toolset-col mb-4">
+                        <div class="toolset-container">
+                            <div>
+                                <div class="h4">yfinance</div>
+                                <img src="images/yfinance-api-logo.png" width="50" alt="INEGI-logo">
+                            </div>
+                            <div class="small-text">Extraction of historical stock prices, company financial health data, additional business information, and popular stock metrics.</div>
+                        </div>
                     </div>
-                    <div class="text-center plotly col-sm-6">
-                        <div class="h4">Plotly</div>
-                        <img src="images/plotly-logo.png" height="50" alt="plotly-logo">
-                        <div class="small-text">Creates <b>interactive visualizations</b> and plots. Dash module powers the web-based dashboard interface.</div>
+
+                    <div class="text-center col-sm-6 col-lg-4 toolset-col mb-4">
+                        <div class="toolset-container">
+                            <div>
+                                <div class="h4">Pandas</div>
+                                <img src="images/pandas-logo.ico" width="50" alt="pandas-logo">
+                            </div>
+                            <div class="small-text">Data management through DataFrames, enabling matrix operations and efficient data manipulation.</div>
+                        </div>
                     </div>
-                    <div class="text-center follium col-sm-6">
-                        <div class="h4">Follium</div>
-                        <img src="images/folium-logo.png" height="50" alt="folium-logo">
-                        <div class="small-text"><b>Displays routes</b> on a map</div>
+
+                    <div class="text-center col-sm-6 col-lg-4 toolset-col mb-4">
+                        <div class="toolset-container">
+                            <div>
+                                <div class="h4">Scipy</div>
+                                <img src="images/scipy-logo.png" style="height: 50px; width: auto" alt="pandas-logo">
+                            </div>
+                            <div class="small-text">Implementation of portfolio risk minimization and Sharpe ratio maximization using the optimization module.</div>
+                        </div>
+                    </div>
+
+                    <div class="text-center col-sm-6 col-lg-4 toolset-col mb-4">
+                        <div class="toolset-container">
+                            <div>
+                                <div class="h4">Numpy</div>
+                                <img src="images/numpy-logo.svg" width="50" alt="pandas-logo">
+                            </div>
+                            <div class="small-text">Calculation of basic statistical measures such as covariance, variance, and mean.</div>
+                        </div>
+                    </div>
+
+                    <div class="text-center col-sm-6 col-lg-4 toolset-col mb-4">
+                        <div class="toolset-container">
+                            <div>
+                                <div class="h4">Plotly</div>
+                                <img src="images/plotly-logo.png" width="50" alt="plotly-logo">
+                            </div>
+                            <div class="small-text">Development of interactive visualizations using graph_objects and integration within the Dash application.</div>
+                        </div>
+                    </div>
+
+                    <div class="text-center col-sm-6 col-lg-4 toolset-col mb-4 mb-lg-0">
+                        <div class="toolset-container">
+                            <div>
+                                <div class="h4">Finnhub API</div>
+                                <img src="images/finnhub-logo.webp" width="50" alt="folium-logo">
+                            </div>
+                            <div class="small-text">Retrieval of real-time news updates for stocks in the user’s portfolio or researched companies.</div>
+                        </div>
+                    </div>
+
+                    <div class="text-center col-sm-6 col-lg-4 toolset-col mb-4 mb-lg-0">
+                        <div class="toolset-container">
+                            <div>
+                                <div class="h4">Banxico API</div>
+                                <img src="images/banxico-logo.png" style="height: 50px; width: auto" alt="folium-logo">
+                            </div>
+                            <div class="small-text">Acquisition of current USD to MXN exchange rate for accurate financial metrics.</div>
+                        </div>
+                    </div>
+
+                    <div class="text-center col-sm-6 col-lg-4 toolset-col">
+                        <div class="toolset-container">
+                            <div>
+                                <div class="h4">DBC</div>
+                                <img src="images/dbc-logo.png" width="50" alt="folium-logo">
+                            </div>
+                            <div class="small-text">Application of Bootstrap classes to enhance styling and layout of the webpage.</div>
+                        </div>
                     </div>
                     
                 </div>
@@ -223,7 +276,7 @@
                 <p class="small-text">01</p>
                 <p class="small-text text-start">Clone the Repository</p>
                 <div>Obtain a local copy of the project repository using the command:</div>
-                <div class="scroll-container">git clone https://github.com/PPuertos/Dashboard-Logistica.git</div>
+                <div class="scroll-container">git clone https://github.com/PPuertos/Stock-Market-Dashboard/stockMarketDashboardNew.git</div>
             </div>
         </div>
 

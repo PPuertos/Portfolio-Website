@@ -48,22 +48,33 @@ html {
 /* TECHNOLOGIES AND TOOLS SECTION*/
 /* TECHNOLOGIES AND TOOLS SECTION*/
 
-.inegi, .pandas, .plotly {
-    margin-bottom: 40px;
-}
-
-/* Whole container elements */
-.inegi, .pandas, .plotly, .follium, .python {
-    color: white;
-}
-
 /* Section Title */
 #tech-used > .h2 {
     margin-bottom: 50px;
 }
 
-.python {
-    margin-bottom: 50px;
+.toolset-col {
+    padding: 0;
+}
+
+.toolset-container {
+    border: 2px solid #A4A091;
+    border-radius: 12px;
+    padding: 10px 15px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    height: 100%;
+}
+
+.toolset-container > div:first-child {
+    margin-bottom: 20px;
+}
+
+.toolset-container > div:nth-child(2) {
+    text-align: justify;
 }
 
 /* TUTORIAL */
@@ -163,7 +174,6 @@ html {
 #dashboard > .h2 {
     margin-bottom: 50px;
 }
-
 
 /* SMALL AND LARGER DEVICES */
 @media (min-width:576px) {
@@ -285,6 +295,10 @@ html {
         margin-bottom: 80px;
     }
 
+    .img-container img {
+        height: auto;
+    }
+
 }
 
 /* ULTRA SMALL DEVICES */
@@ -315,6 +329,29 @@ html {
     }
 }
 
-.img-container img {
-    height: auto;
+/* Small to Medium devices */
+@media (min-width:576px) and (max-width:991px) {
+    .toolset-col:nth-child(odd) {
+        padding-right: 10px;
+    }
+    
+    .toolset-col:nth-child(even) {
+        padding-left: 10px;
+    }
+}
+
+/* Large to larger devices */
+@media (min-width:992px) {
+    .toolset-col:nth-child(3n-2) {
+        padding-right: 10px;
+    }
+
+    .toolset-col:nth-child(3n-1) {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .toolset-col:nth-child(3n) {
+        padding-left: 10px;
+    }
 }

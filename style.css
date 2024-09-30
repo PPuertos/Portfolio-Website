@@ -28,7 +28,7 @@
 
 .nav-link:hover {
     color: var(--bs-primary);
-    text-decoration: overline;
+    text-decoration:line-through;
 }
 
 /* MAIN TITLES */
@@ -175,6 +175,57 @@ body {
 
 
 /* Contenedores seccion projects */
+#projects > .row {
+    padding: 60px 0 60px 20px;
+}
+
+#projects > .row > .col-lg-6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#projects > .row > .col-lg-6:first-child a {
+    text-decoration: none;
+    border: 2px solid #A4A091;
+    border-radius: 25px;
+    padding: 10px 20px;
+    align-self: center;
+}
+
+#projects > .row > .col-lg-6:first-child a:hover {
+    background-color: #A4A091;
+    color: white;
+}
+
+#projects > .row > .col-lg-6 {
+    padding-left: 2vw;
+}
+
+#projects > .row > .col-lg-6 video, #projects > .row > .col-lg-6 img {
+    border-radius: 8px;
+}
+
+#projects > .row > .col-lg-6:nth-child(2) a {
+    overflow: hidden; /* Oculta cualquier desbordamiento de la imagen */
+    display: flex; /* Usa flexbox para centrar la imagen si es necesario */
+    background-color: rgb(164, 160, 145, .2);
+    padding: 5vw 3vw;
+    border-radius: 16px;
+}
+
+#projects > .row > .col-lg-6:nth-child(2) a {
+    justify-content: start; /* Centra horizontalmente */
+}
+#projects > .row:last-child > .col-lg-6:nth-child(2) a {
+    justify-content: end; /* Centra horizontalmente */
+}
+
+#projects > .row > .col-lg-6:nth-child(2) > a video, #projects > .row > .col-lg-6:nth-child(2) > a img {
+    width: 80vw;
+    position: relative;
+}
+
 #projects {
     padding-top: 80px;
     padding-bottom: 20px;
@@ -185,16 +236,14 @@ body {
     padding: 30px;
     height: 100%;
     border: 3px solid transparent;
-    border: 2px solid #A4A091;
+    border: 1px solid #A4A091;
 }
 
 #projects > .col-12 > a > .container:hover {
     text-decoration: line-through;
 }
 
-#projects > .col-12 > a > .container video {
-    border-radius: 10px;
-}
+
 
 #projects > .col-12 > a {
     text-decoration: none;
@@ -280,6 +329,47 @@ svg:hover {
     height: 2.2em;
 }
 
+@media (max-width:991px) {
+    #projects > .row .col-lg-6:nth-child(2) {
+        order: 1;
+        margin-bottom: 50px;
+    }
+    #projects > .row .col-lg-6:nth-child(1) {
+        order: 2;
+        border: none;
+    }
+    #projects > .row > .col-lg-6 div:nth-child(2) {
+        margin-bottom: 20px;
+    }
+
+    #projects {
+        padding: 0;
+    }
+
+    #projects > .row {
+        padding: 0;
+    }
+}
+
+@media (min-width:992px) {
+
+    #projects > .row:nth-child(odd) .col-lg-6:nth-child(1) {
+        order: 2;
+    }
+
+    #projects > .row:nth-child(odd) .col-lg-6:nth-child(2) {
+        order: 1;
+    }
+
+    #projects > .row:nth-child(even) .col-lg-6:nth-child(1) {
+        order: 1;
+    }
+
+    #projects > .row:nth-child(even) .col-lg-6:nth-child(2) {
+        order: 2;
+    }
+}
+
 @media (min-width:768px){
     #experience-content > .col-3 > .text-dark-2 {
         writing-mode: horizontal-tb;
@@ -331,4 +421,31 @@ svg:hover {
 
 .project-box {
     border-radius: 10px;
+}
+
+.hs {
+    border: 1px solid #A4A091;
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+
+.tags-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se acomoden en varias filas */
+    justify-content: center;
+    gap: 10px 0px;
+  }
+  
+.tag {
+    padding: 5px 10px; /* Controla el tamaño del relleno dentro del borde */
+    border: 1px solid #A4A091; /* Color y grosor del borde */
+    border-radius: 15px; /* Radio de borde para dar un efecto redondeado */
+    display: inline-block;
+    margin: 3px; /* Controla el espaciado entre los elementos */
+    cursor:pointer;
+}
+
+.tag:hover {
+    background-color: #A4A091;
+    color: white;
 }
