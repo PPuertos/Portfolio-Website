@@ -11,14 +11,14 @@ html {
 
 /* Height of the whole screen*/
 #home, #value-proposition, #features, #tech-used, #tutorial, #dashboard {
-    padding-bottom: 50px;
+    margin-bottom: 50px;
 }
 
 /* FOR INTERACTIVE IMAGES */
 .img-container {
-    border: 2px solid rgb(164, 160, 145, .8);
-    padding: 5vw 3vw;
-    border-radius: 12px;
+    background-color: rgb(164, 160, 145, .2);
+    padding: 3vw 4vw;
+    border-radius: 16px;
 }
 
 .img-container > img {
@@ -29,19 +29,20 @@ html {
 /* FOR HOME SECTION */
 /* FOR HOME SECTION */
 /* FOR HOME SECTION */
-
-
-/* FEATURES SECTION*/
-/* FEATURES SECTION*/
-/* FEATURES SECTION*/
-
-/* Main point containers */
-#features > .right-side > .row {
-    padding: 30px;
+#home .small-text {
+    padding-bottom: 50px;
 }
 
-#features > .right-side > .row > .col-sm-6 {
-    margin-bottom: 30px;
+/* FEATURES SECTION*/
+/* FEATURES SECTION*/
+/* FEATURES SECTION*/
+
+#features > .col-12 .small-text {
+    text-align: justify;
+}
+
+#features > .col-12 .col-sm-6 {
+    margin-bottom: 80px;
 }
 
 /* TECHNOLOGIES AND TOOLS SECTION*/
@@ -58,7 +59,7 @@ html {
 }
 
 .toolset-container {
-    border: 2px solid #A4A091;
+    border: 1px solid #A4A091;
     border-radius: 12px;
     padding: 10px 15px;
     color: white;
@@ -94,13 +95,9 @@ html {
     border-radius: 12px;
 }
 
-#tutorial {
-    padding-left: 30px;
-    padding-right: 30px;
-}
-
 #tutorial > .col-md-6 {
-    padding: 20px;
+    margin-bottom: 30px;
+    padding: 0;
 }
 
 #tutorial > .col-md-6 > div {
@@ -184,11 +181,6 @@ html {
 
 /* MEDIUM AND SMALLER DEVICES */
 @media (max-width:768px) {
-    /* HOME SECTION */
-    /* Description */
-    #home .small-text {
-        padding-bottom: 50px;
-    }
 
     /* VALUE PROPOSITION */
     #value-proposition .h2 {
@@ -197,36 +189,13 @@ html {
 }
 
 /* MEDIUM AND LARGER DEVICES */
-@media (min-width:768px) {
-    #tutorial > div:nth-child(2), #tutorial > div:nth-child(3), #tutorial > div:nth-child(5), #tutorial > div:nth-child(6) {
-        padding-right: 30px;
+@media (min-width:768px) and (max-width:991px) {
+    #tutorial > div:nth-child(odd) {
+        padding-left: 15px;
     }
-}
 
-/* SMALL DEVICES */
-@media (min-width:576px) and (max-width:768px)  {
-    #tutorial > div:nth-child(2), #tutorial > div:nth-child(4), #tutorial > div:nth-child(6) {
-        padding-right: 30px;
-    }
-}
-
-/* LARGE AND SMALLER DEVICES */
-@media (max-width:1199px) {
-    .img-container {
-        overflow: hidden; /* Oculta cualquier desbordamiento de la imagen */
-        display: flex; /* Usa flexbox para centrar la imagen si es necesario */
-        justify-content: start; /* Centra horizontalmente */
-    }
-    
-    .img-container > img {
-        width: 120vw;
-        position: relative;
-        transform: translateX(0); /* Estado inicial */
-        transition: transform 2s; /* Transición para el regreso al estado original */
-    }
-    
-    .img-container > img:hover {
-        transform: translateX(-36vw); /* Estado final durante el hover */
+    #tutorial > div:nth-child(even) {
+        padding-right: 15px;
     }
 }
 
@@ -235,19 +204,7 @@ html {
 
     /* HOME SECTION */
     /* Title and Description Container */
-    #home > div:first-child {
-        padding-right: 40px;
-    }
 
-    /* Image */
-    .img-container > img {
-        width: 50vw;
-    }
-    
-    
-    .img-container > img:hover {
-        transform: translateX(-10vw); /* Estado final durante el hover */
-    }
 
     /* FEATURES SECTION */
     
@@ -267,17 +224,6 @@ html {
 /* XL AND LARGER DEVICES */
 @media (min-width:1200px) {
 
-    /* DYNAMIC IMAGES */
-    .img-container > img {
-        width: 100%;
-        height: fit-content;
-    }
-
-    /**/
-    #home > div:nth-child(1) > div:nth-child(2) {
-        margin-bottom: 50px;
-    }
-
     /* FEATURES SECTION */
     #features > .right-side > .row {
         display: flex;
@@ -293,10 +239,6 @@ html {
     /* TUTORIAL */
     #tutorial > .small-text:nth-child(2), #tutorial > .small-text:nth-child(3), #tutorial > .small-text:nth-child(4) {
         margin-bottom: 80px;
-    }
-
-    .img-container img {
-        height: auto;
     }
 
 }
@@ -323,9 +265,9 @@ html {
         font-size: 4vw;
     }
 
-    #home, #features, #value-proposition, #tech-used, #tutorial {
-        padding-left: 5vw;
-        padding-right: 5px;
+    #home, #features, #value-proposition, #tech-used, #tutorial, #dashboard {
+        padding-left: 3vw;
+        padding-right: 3vw;
     }
 }
 
@@ -337,6 +279,14 @@ html {
     
     .toolset-col:nth-child(even) {
         padding-left: 10px;
+    }
+
+    #features > .col-12 .col-sm-6:nth-child(odd) {
+        padding-right: 30px;
+    }
+
+    #features > .col-12 .col-sm-6:nth-child(even) {
+        padding-left: 30px;
     }
 }
 
@@ -354,4 +304,32 @@ html {
     .toolset-col:nth-child(3n) {
         padding-left: 10px;
     }
+
+    #features > .col-12 .col-sm-6:nth-child(3n-1) {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    #features > .col-12 .col-sm-6:nth-child(3n-2) {
+        padding-right: 30px;
+    }
+
+    #features > .col-12 .col-sm-6:nth-child(3n) {
+        padding-left: 30px;
+    }
+
+    #tutorial > div:nth-child(3n) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    #tutorial > div:nth-child(3n-1) {
+        padding-right: 15px;
+    }
+
+    #tutorial > div:nth-child(3n-2) {
+        padding-left: 15px;
+    }
+
+    
 }

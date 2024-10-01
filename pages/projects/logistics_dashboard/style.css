@@ -11,7 +11,7 @@ html {
 
 /* Height of the whole screen*/
 #home, #value-proposition, #features, #tech-used, #tutorial, #dashboard {
-    padding-bottom: 50px;
+    margin-bottom: 50px;
 }
 
 /* FOR INTERACTIVE IMAGES */
@@ -38,10 +38,6 @@ html {
 /* Main point containers */
 #features > .right-side > .row {
     padding: 30px;
-}
-
-#features > .right-side > .row > .col-sm-6 {
-    margin-bottom: 30px;
 }
 
 /* TECHNOLOGIES AND TOOLS SECTION*/

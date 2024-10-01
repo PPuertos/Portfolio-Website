@@ -58,6 +58,10 @@
     text-align: center;
 }
 
+.h3 > b {
+    font-weight: 700;
+}
+
 /* Sub-sub-subtitles */
 .h4 {
     font-size: 20px;
@@ -148,10 +152,6 @@ body {
     border-bottom: 2px solid #A4A091;
 }
 
-#about-me, #projects > .container-fluid {
-    padding: 0 20px;
-}
-
 #about-me > .h2 {
     margin-bottom: 20px;
 }
@@ -172,6 +172,10 @@ body {
     padding-top: 80px;
     padding-bottom: 20px;
     border-top: 2px solid #A4A091;
+}
+
+#about-me {
+    background-color: rgb(164, 160, 145, .1);
 }
 
 
@@ -208,7 +212,7 @@ body {
     overflow: hidden; /* Oculta cualquier desbordamiento de la imagen */
     display: flex; /* Usa flexbox para centrar la imagen si es necesario */
     background-color: rgb(164, 160, 145, .2);
-    padding: 5vw 3vw;
+    padding: 35px 20px;
     border-radius: 16px;
 }
 
@@ -234,7 +238,7 @@ body {
 }
 
 #projects > .container-fluid > .row > .col-lg-6:nth-child(2) > a video, #projects > .container-fluid > .row > .col-lg-6:nth-child(2) > a img {
-    width: 200%;
+    width: 150%;
     position: relative;
 }
 
@@ -315,18 +319,6 @@ svg:hover {
     color: #A4A091;
 }
 
-#contact-info-bar > svg {
-    width: 2em;
-    height: 2em;
-    color: white;
-}
-
-#contact-info-bar > svg:hover {
-    color:#A4A091;
-    width: 2.2em;
-    height: 2.2em;
-}
-
 
 @media (min-width:992px) {
 
@@ -344,6 +336,10 @@ svg:hover {
 
     #projects > .container-fluid > .row:nth-child(even) .col-lg-6:nth-child(2) {
         order: 2;
+    }
+
+    #projects > .container-fluid > .row > .col-lg-6:nth-child(2) a {
+        padding: 5vw 3vw;
     }
 }
 
