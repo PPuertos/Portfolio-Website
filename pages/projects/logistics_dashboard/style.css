@@ -23,6 +23,7 @@ html {
 
 .img-container > img {
     width: 100%;
+    height: auto;
     border-radius: 10px;
 }
 
@@ -338,7 +339,7 @@ html {
     /* DYNAMIC IMAGES */
     .img-container > img {
         width: 100%;
-        height: fit-content;
+        height: auto;
     }
 
     /**/
