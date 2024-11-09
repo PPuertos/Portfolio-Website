@@ -201,13 +201,29 @@ body {
     align-self: center;
 }
 
+#projects > .container-fluid > .row > .col-lg-6:first-child #buttons-container {
+    align-self: center;
+}
+
 #projects > .container-fluid > .row > .col-lg-6:first-child a:hover {
     background-color: #A4A091;
     color: white;
 }
 
-/* Viedo and Image Background */
+/* COnfiguración para mas de un botón */
+#buttons-container {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
 
+@media (max-width: 359px) {
+    #buttons-container {
+        flex-direction: column;
+    }
+}
+
+/* Viedo and Image Background */
 #projects > .container-fluid > .row > .col-lg-6:nth-child(2) a {
     overflow: hidden; /* Oculta cualquier desbordamiento de la imagen */
     display: flex; /* Usa flexbox para centrar la imagen si es necesario */
@@ -215,6 +231,22 @@ body {
     padding: 35px 20px;
     border-radius: 16px;
 }
+/* Iframe Background */
+#projects > .container-fluid > .row > .col-lg-6:nth-child(2) > div {
+    overflow: hidden; /* Oculta cualquier desbordamiento de la imagen */
+    display: flex; /* Usa flexbox para centrar la imagen si es necesario */
+    background-color: rgb(164, 160, 145, .2);
+    padding: 35px 20px;
+    border-radius: 16px;
+}
+#projects > .container-fluid > .row > .col-lg-6:nth-child(2) > div iframe {
+    width: 100%;
+}
+
+#projects > .container-fluid > .row > .col-lg-6:nth-child(2) > div {
+    padding: 35px 20px 35px 0px;
+}
+
 
 /* Video and Image */
 
@@ -230,17 +262,14 @@ body {
     border-radius: 8px;
 }
 
+/* Radius and background color for iframe container */
 #projects >  .container-fluid > .row > .col-lg-6 iframe {
     border-radius: 0px 8px 8px 0px;
-}
-
-#projects >  .container-fluid > .row:nth-child(2) > .col-lg-6 a:nth-child(1) {
-    padding-left: 0;
-}
-
-/* black background for the plot */
-#projects >  .container-fluid > .row > .col-lg-6 iframe {
     background-color: #000;
+}
+
+#projects >  .container-fluid > .row:nth-child(2) > .col-lg-6:nth-child(2) a  {
+    padding-left: 0px;
 }
 
 #projects > .container-fluid > .row > .col-lg-6:nth-child(2) a {
@@ -255,7 +284,7 @@ body {
     position: relative;
 }
 
-#projects > .container-fluid > .row > .col-lg-6:nth-child(2) > a iframe {
+#projects > .container-fluid > .row > .col-lg-6:nth-child(2) iframe {
     height: 55vw;
 }
 
@@ -358,8 +387,11 @@ svg:hover {
     #projects > .container-fluid > .row > .col-lg-6:nth-child(2) a {
         padding: 5vw 3vw;
     }
-    #projects > .container-fluid > .row > .col-lg-6:nth-child(2) > a iframe {
-        height: 28vw;
+    #projects > .container-fluid > .row > .col-lg-6:nth-child(2) div {
+        padding: 5vw 3vw 5vw 0;
+    }
+    #projects > .container-fluid > .row > .col-lg-6:nth-child(2) div iframe {
+        height: 30vw;
     }
 }
 

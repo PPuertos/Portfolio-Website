@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta charset="utf-8">
         <title>Portfolio Website</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,61 +14,47 @@
         <link rel="stylesheet" href="style.css">
     </head>
 
-<!-- Navigation Bar-->
-<nav class="navbar navbar-expand-md fixed-top bg-dark">
-  <div class="container-fluid">
-    <!-- Navbar Brand-->
-    <a class="navbar-brand" href="#">FRANCISCO PUERTOS</a>
-    <!-- Navbar toggler-->
-    <button class="navbar-toggler border-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-      <!-- Navbar toggler icon-->
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="offcanvas offcanvas-end bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title text-primary" id="offcanvasNavbarLabel">Portfolio</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <!-- Navbar body-->
-      <div class="offcanvas-body">
-        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">HOME</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#about-me">ABOUT ME</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#projects">PROJECTS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#experience">EXPERIENCE</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contact-info">CONTACT</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</nav>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var offcanvasElement = document.getElementById('offcanvasNavbar');
-    var offcanvas = new bootstrap.Offcanvas(offcanvasElement);
-    var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-
-    navLinks.forEach(function (link) {
-      link.addEventListener('click', function () {
-        offcanvas.hide();
-      });
-    });
-  });
-</script>
-
 
     <body class="bg-dark">
+      <!-- Navigation Bar-->
+      <nav class="navbar navbar-expand-md fixed-top bg-dark">
+        <div class="container-fluid">
+          <!-- Navbar Brand-->
+          <a class="navbar-brand" href="#">FRANCISCO PUERTOS</a>
+          <!-- Navbar toggler-->
+          <button class="navbar-toggler border-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <!-- Navbar toggler icon-->
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title text-primary" id="offcanvasNavbarLabel">Portfolio</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <!-- Navbar body-->
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="#">HOME</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#about-me">ABOUT ME</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#projects">PROJECTS</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#experience">EXPERIENCE</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#contact-info">CONTACT</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+
         <script src="bootstrap-5.3.3-dist/js/jquery-3.7.1.min.js"></script>
         <script src="bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
         <script src="bootstrap-5.3.3-dist/js/script.js"></script>
@@ -87,7 +72,7 @@
             </div>
 
             <div class="col-md-5 col-12 p-0">
-              <img id="image-paco-puertos" src="img/profile-picture-paco-puertos.png" alt="Francisco Puertos" width="100%">
+              <img id="image-paco-puertos" src="img/profile-picture-paco-puertos.png" alt="Francisco Puertos" style="width: 100%;">
             </div>
           </div>
 
@@ -171,7 +156,7 @@
           </div>
 
             <div class="row px-3" id="projects">
-              <div class="h2 text-primary text-center mb-5">Projects</div>
+              <div class="h2 text-primary text-center mb-5">Projects & Articles</div>
 
               <div class="container-fluid">
                 <div class="row">
@@ -186,7 +171,7 @@
     
                   <div class="col-lg-6">
                     <a href="pages/projects/stock_market_portfolio/page.html">
-                      <video autoplay loop muted playsinline width="100%" src="img/Screen Recording 2024-09-23 at 10.02.27 PM.mov"></video>
+                      <video autoplay loop muted playsinline src="img/stockMarketPortfolio.mov"></video>
                     </a>
                   </div>
                 </div>
@@ -198,15 +183,18 @@
                       <div class="h3 text-primary text-start"><b>Linear Regression</b> Tool</div>
                       <div class="small-text text-white">A <b>Python-based</b> tool designed to select the <b>best regression model</b>. Performs <b>single</b> and <b>multi-variable</b> regressions, supports various regression types, and includes model comparisons, correlation matrices, and ANOVA tables. Provides top models for different variable combinations with detailed metrics to guide <b>model selection</b>.</div>
                     </div>
-                    
-                    <a href="pages/projects/regression_modeler/page.html">View Case Study</a>
+
+                    <div id="buttons-container">
+                      <a href="pages/projects/regression_modeler/page.html" class="text-start">View Case Study</a>
+                      <a href="pages/articles/linearRegressionPIB/index.html" class="text-start">View Article</a>
+                    </div>
                 
                   </div>
     
                   <div class="col-lg-6">
-                    <a href="pages/projects/regression_modeler/page.html">
-                      <iframe width="100%" src="img/modelPlotHome.html" class="iframe"></iframe>
-                    </a>
+                    <div>
+                      <iframe src="img/modelPlotHome.html" class="iframe"></iframe>
+                    </div>
                   </div>
                 </div>
   
@@ -222,7 +210,7 @@
     
                   <div class="col-lg-6">
                     <a href="pages/projects/logistics_dashboard/page.html">
-                      <video autoplay loop muted playsinline width="100%" src="img/Panel-1-video.mov"></video>
+                      <video autoplay loop muted playsinline src="img/Panel-1-video.mov"></video>
                     </a>
                   </div>
                 </div>
@@ -241,7 +229,7 @@
     
                   <div class="col-lg-6">
                     <a href="pages/projects/personal_finances/page.html">
-                      <video autoplay loop muted playsinline width="100%" src="img/personal-finances-panel.MOV"></video>
+                      <video autoplay loop muted playsinline src="img/personal-finances-panel.MOV"></video>
                     </a>
                   </div>
                 </div>
@@ -260,10 +248,11 @@
     
                   <div class="col-lg-6">
                     <a href="#">
-                      <img autoplay loop muted playsinline width="100%" src="img/web-page.png"></img>
+                      <img src="img/web-page.png" alt="project5-image">
                     </a>
                   </div>
                 </div>
+
               </div>
 
             </div>
@@ -373,5 +362,18 @@
           </div>
         </div>
         <script src="script.js"></script>
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            var offcanvasElement = document.getElementById('offcanvasNavbar');
+            var offcanvas = new bootstrap.Offcanvas(offcanvasElement);
+            var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+        
+            navLinks.forEach(function (link) {
+              link.addEventListener('click', function () {
+                offcanvas.hide();
+              });
+            });
+          });
+        </script>
     </body>
 </html>

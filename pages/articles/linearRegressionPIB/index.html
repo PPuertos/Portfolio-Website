@@ -246,8 +246,8 @@
             <div class="row px-0 mb-0">
                 <!-- Right Column -->
                 <div class="responsive-iframe covMatrix col-12 col-lg-7 order-2 order-lg-1">
-                    <br><iframe src="img/correlationMatrix.html" class="iframe d-none d-md-block" frameborder="0"></iframe>
-                    <br><iframe src="img/correlationMatrixMini.html" class="iframe d-md-none d-block" frameborder="0"></iframe>
+                    <br><iframe src="img/correlationMatrix.html" class="iframe d-none d-md-block"></iframe>
+                    <br><iframe src="img/correlationMatrixMini.html" class="iframe d-md-none d-block"></iframe>
                 </div>
 
                 <!-- Left Column -->
@@ -384,7 +384,7 @@
                           <tr>
                             <td>const</td>
                             <td>-3,163,366.66</td>
-                            <td>-9,837,427.26 &lt; β<sub>0</sub> &lt; 3,510,693.93</td>
+                            <td><nobr>-9,837,427.26 &lt; β<sub>0</sub> &lt; 3,510,693.93</nobr></td>
                             <td>1.00</td>
                           </tr>
                           <tr>
@@ -807,9 +807,11 @@
     
                 <div class="small-text text-white mt-4">
                     The two best models obtained are as follows:
+                </div>
                 
+                <div class="small-text text-white mt-4">
                     <ul>
-                        <br>
+                        
                         <li>
                             Model with 9 variables (excluding the "Repair and Maintenance Services" variable):
                 
@@ -823,8 +825,8 @@
                             </ul>
                 
                         </li>
-                        <br>
-                        <li>
+
+                        <li class="mt-3">
                             Model with 10 variables:
                 
                             <ul>
@@ -839,8 +841,7 @@
                         </li>
                 
                     </ul>
-                
-            </div>         
+                </div>
 
             <p class="small-text text-white">
                 <br>When comparing both models, we can observe that the 9-variable model has slightly better performance (96.51% versus 96.4433%) and also presents a lower standard deviation, making it more stable in its predictions.
@@ -981,7 +982,7 @@
                     </li>
     
                     <li>
-                        n-k-1 is the degrees of freedom associated with the error (residuals), based on the sample size n and the number of predictors k <nobr>(n=60, n-k-1=50)</nobr>.
+                        n-k-1 is the degrees of freedom associated with the error (residuals), based on the sample size n and the number of predictors k (n=60, n-k-1=50).
                     </li>
                 </ul>
             </div>
@@ -1007,7 +1008,7 @@
             </div>
             
             <div class="mb-3">
-                The confidence intervals of the constant are: -9837427.2603 < b<sub>0</sub> < 3510693.9333, so 0 is part of the interval. This suggests a possible regression through the origin. However, given the context of the model and the nature of the national GDP, we will not remove the constant. It is important to consider that although the variables in the model explain a large proportion of the GDP, they do not represent all the factors influencing the national economy. Assigning a value of zero to the GDP when all explanatory variables are zero would not be realistic, as it implies there are no other economic factors at play.
+                The confidence intervals of the constant are: -9837427.2603 &lt; b<sub>0</sub> &lt; 3510693.9333, so 0 is part of the interval. This suggests a possible regression through the origin. However, given the context of the model and the nature of the national GDP, we will not remove the constant. It is important to consider that although the variables in the model explain a large proportion of the GDP, they do not represent all the factors influencing the national economy. Assigning a value of zero to the GDP when all explanatory variables are zero would not be realistic, as it implies there are no other economic factors at play.
             </div>
             
             <div class="mb-3">
@@ -1049,7 +1050,7 @@
                 </p>                
 
                 <div class="responsive-iframe qqplot">
-                    <br><iframe src="img/qqplot.html" class="iframe" frameborder="0"></iframe>
+                    <br><iframe src="img/qqplot.html" class="iframe"></iframe>
                 </div>
 
                 <div class="h5"><br>Histogram</div>
@@ -1058,7 +1059,7 @@
                 </p>                
 
                 <div class="responsive-iframe qqplot">
-                    <br><iframe src="img/histResVsFreq.html" class="iframe" frameborder="0"></iframe>
+                    <br><iframe src="img/histResVsFreq.html" class="iframe"></iframe>
                 </div>
 
                 <div class="h4">
@@ -1070,7 +1071,7 @@
                 </p>
                 
                 <p>
-                    Our Chi-square test results were: 4.8779 < 11.0705. These results show that there is not enough evidence to reject the hypothesis of normality with a mean of 0 for the residuals. This analytically confirms that the residuals come from a normal distribution with a mean of zero, thereby validating one of the key assumptions for the model's reliability.
+                    Our Chi-square test results were: 4.8779 &lt; 11.0705. These results show that there is not enough evidence to reject the hypothesis of normality with a mean of 0 for the residuals. This analytically confirms that the residuals come from a normal distribution with a mean of zero, thereby validating one of the key assumptions for the model's reliability.
                 </p>
                 
                 <div class="h3 text-start">
@@ -1094,7 +1095,7 @@
                 </p>                
 
                 <div class="responsive-iframe versusFitPlot">
-                    <br><iframe src="img/versusFitPlot.html" class="iframe" frameborder="0"></iframe>
+                    <br><iframe src="img/versusFitPlot.html" class="iframe"></iframe>
                 </div>
 
             </div>
@@ -1119,7 +1120,7 @@
             </p>
 
             <div class="responsive-iframe versusOrderPlot">
-                <br><iframe src="img/versusOrderPlot.html" class="iframe" frameborder="0"></iframe>
+                <br><iframe src="img/versusOrderPlot.html" class="iframe"></iframe>
             </div>
             
             <div class="h4">
@@ -1206,8 +1207,8 @@
             </p>            
     
             <div class="responsive-iframe modelPlot">
-                <br><iframe src="img/modelPlot.html" class="iframe d-none d-md-block" frameborder="0"></iframe>
-                <br><iframe src="img/modelPlotMini.html" class="iframe d-md-none d-block" frameborder="0"></iframe>
+                <br><iframe src="img/modelPlot.html" class="iframe d-none d-md-block"></iframe>
+                <br><iframe src="img/modelPlotMini.html" class="iframe d-md-none d-block"></iframe>
             </div>
         </div>
 
