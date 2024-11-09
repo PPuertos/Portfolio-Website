@@ -30,7 +30,7 @@ tr {
 
 .dataframe-container {
     overflow-x: auto;
-    border-radius: 16px;
+    border-radius: 8px;
     padding: 0 !important;
     background-color: white !important;
 }
