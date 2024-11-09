@@ -230,6 +230,19 @@ body {
     border-radius: 8px;
 }
 
+#projects >  .container-fluid > .row > .col-lg-6 iframe {
+    border-radius: 0px 8px 8px 0px;
+}
+
+#projects >  .container-fluid > .row:nth-child(2) > .col-lg-6 a:nth-child(1) {
+    padding-left: 0;
+}
+
+/* black background for the plot */
+#projects >  .container-fluid > .row > .col-lg-6 iframe {
+    background-color: #000;
+}
+
 #projects > .container-fluid > .row > .col-lg-6:nth-child(2) a {
     justify-content: start; /* Centra horizontalmente */
 }
@@ -240,6 +253,10 @@ body {
 #projects > .container-fluid > .row > .col-lg-6:nth-child(2) > a video, #projects > .container-fluid > .row > .col-lg-6:nth-child(2) > a img {
     width: 150%;
     position: relative;
+}
+
+#projects > .container-fluid > .row > .col-lg-6:nth-child(2) > a iframe {
+    height: 55vw;
 }
 
 #projects > .container-fluid > .row .col-lg-6:nth-child(2) {
@@ -341,6 +358,9 @@ svg:hover {
     #projects > .container-fluid > .row > .col-lg-6:nth-child(2) a {
         padding: 5vw 3vw;
     }
+    #projects > .container-fluid > .row > .col-lg-6:nth-child(2) > a iframe {
+        height: 28vw;
+    }
 }
 
 @media (min-width:768px){
@@ -359,6 +379,7 @@ svg:hover {
         );
         transition: mask-image 2s;
     }
+
 }
 
 @media (max-width:321px){

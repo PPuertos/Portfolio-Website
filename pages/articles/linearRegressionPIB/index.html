@@ -1,0 +1,1297 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- My Style -->
+     <link rel="stylesheet" href="style.css">
+
+     <!-- Bootstrap Style Modifications (By me)-->
+     <link rel="stylesheet" href="../../../css/main.min.css">
+     <!-- Main style -->
+     <link rel="stylesheet" href="../../../style.css">
+     
+     <!-- Font Style-->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+    <title>Mexico's GDP</title>
+  </head>
+  <body class="bg-dark">
+
+    <!-- Navigation Bar-->
+    <nav class="navbar navbar-expand-md fixed-top bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../../../index.html">FRANCISCO PUERTOS</a>
+            <button class="navbar-toggler border-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title text-primary" id="offcanvasNavbarLabel">Portfolio</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item"><a class="nav-link" aria-current="page" href="../../../index.html">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link" aria-current="page" href="#">INTRO</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#variables">VARIABLES</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#modelo">MODEL</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#supuestos">ASSUMPTIONS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#conclusion">CONCLUSION</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+
+        <!-- Main Title -->
+
+        <!--
+        OPCIÓN INICIAL DE TITULO:
+
+        Desarrollo de una Estrategia de Inversión para Sectores y Actividades con Mayor Impacto en el Crecimiento del PIB
+        -->
+
+        <div class="h1 text-primary text-start">
+            Multiple Linear Regression: Activities with the <b>Greatest Impact</b> on <b>GDP Growth</b> in <b>Mexico</b>
+        </div>
+
+        <div class="row row-margin">
+            <div class="h2 text-white">Research Objective</div>
+
+            <div class="small-text text-white">
+                To identify and quantify the sectors and activities with the greatest impact on national GDP growth in Mexico, in order to <b>provide a model that can accurately estimate GDP under various economic conditions</b>.
+            </div>
+            
+            <div class="small-text text-white">
+                <br>This analysis will provide valuable insights for <b>policymakers and economists</b>, guiding them on which sectors to prioritize to foster sustainable and productive economic growth, while also offering a tool for more precise <b>GDP predictions</b>.
+            </div>            
+        </div>
+
+        <div class="row row-margin">
+
+            <div class="h2 text-white">Activities to Analyze</div>
+
+            <div>
+                <ol>
+
+                    <li class="small-text text-white">
+                        <b>Agriculture</b>
+                        <p>
+                            Agriculture is essential for the livelihood of many communities in Mexico. States like Sinaloa and Jalisco lead in corn and other crop production, while Chiapas stands out in coffee. This sector not only contributes to GDP but is also vital for food security.
+                        </p>
+                    </li>
+        
+                    <li class="small-text text-white">
+                        <b>Mining</b>
+                        <p>
+                            Mining is a key sector, with states like Zacatecas and Durango being important producers of silver and other minerals. Additionally, Sonora is known for its copper production, an essential resource for the industry.
+                        </p>
+                    </li>
+        
+                    <li class="small-text text-white">
+                        <b>Electric Power Generation and Distribution</b>
+                        <p>
+                            This sector is critical for economic development. Veracruz and Tamaulipas are states with significant energy infrastructures, playing a crucial role in electricity generation from both renewable and conventional sources.
+                        </p>
+                    </li>
+        
+                    <li class="small-text text-white">
+                        <b>Construction</b>
+                        <p>
+                            Construction drives urban development, with Mexico City and the State of Mexico leading in infrastructure projects, including housing and public works.
+                        </p>
+                    </li>
+    
+                    <li class="small-text text-white">
+                        <b>Food Industry</b>
+                        <p>
+                            The food industry not only meets domestic demand but also exports products. Puebla and Jalisco are recognized for their processed products, such as tequila and sauces.
+                        </p>
+                    </li>
+    
+                    <li class="small-text text-white">
+                        <b>Beverage and Tobacco Industry</b>
+                        <p>
+                            States like Jalisco and Coahuila are significant in the production of alcoholic beverages, especially tequila. This industry generates employment and is a driver of exports.
+                        </p>
+                    </li>
+                    
+                    <li class="small-text text-white">
+                        <b>Machinery and Equipment Manufacturing</b>
+                        <p>
+                            The machinery industry is vital for manufacturing, with Querétaro and Guanajuato as development hubs. These regions are key for the production of agricultural and automotive machinery.
+                        </p>
+                    </li>
+                    
+                    <li class="small-text text-white">
+                        <b>Chemical Products Manufacturing</b>
+                        <p>
+                            The chemical industry is crucial for industrial development, with the State of Mexico and Veracruz standing out in the production of basic and specialized chemical products.
+                        </p>
+                    </li>
+                    
+                    <li class="small-text text-white">
+                        <b>Wholesale Trade</b>
+                        <p>
+                            Wholesale trade is a cornerstone of the tertiary sector. Mexico City is a central hub, with numerous markets and wholesalers supplying the country.
+                        </p>
+                    </li>                    
+    
+                    <li class="small-text text-white">
+                        <b>Financial and Insurance Services</b>
+                        <p>
+                            This sector is fundamental for the economy, with Mexico City as the financial center. Banking and insurance institutions are essential for investment and economic development.
+                        </p>
+                    </li>
+                    
+                    <li class="small-text text-white">
+                        <b>Transportation and Storage</b>
+                        <p>
+                            This activity is crucial for trade and logistics in Mexico, facilitating the mobility of goods and people. States with the most activity in this sector include Veracruz, State of Mexico, and Nuevo León, where ports, airports, and land transport networks are concentrated.
+                        </p>
+                    </li>
+                    
+                    <li class="small-text text-white">
+                        <b>Health and Social Assistance Services</b>
+                        <p>
+                            Health is a fundamental pillar for the well-being of the population, and its development directly impacts productivity and quality of life. States like Jalisco, Mexico City, and Guanajuato have well-established and constantly growing health infrastructure.
+                        </p>
+                    </li>
+                    
+                    <li class="small-text text-white">
+                        <b>Educational Services</b>
+                        <p>
+                            Education is key for the development of human capital and innovation. States like Mexico City, Nuevo León, and Jalisco have a high concentration of educational institutions, from primary schools to universities, contributing to the formation of a skilled workforce.
+                        </p>
+                    </li>
+                    
+                    <li class="small-text text-white">
+                        <b>Temporary Accommodation Services</b>
+                        <p>
+                            This sector is essential for tourism, which is one of the main sources of income in Mexico. States like Quintana Roo, Mexico City, and Baja California Sur stand out for their hotel infrastructure and tourism services, attracting millions of visitors every year.
+                        </p>
+                    </li>
+                    
+                    <li class="small-text text-white">
+                        <b>Repair and Maintenance Services</b>
+                        <p>
+                            This sector contributes to the sustainability of goods and equipment, promoting more conscious and efficient consumption. Industrial cities like Monterrey, Tijuana, and Guadalajara are key centers for this type of service, benefiting both businesses and consumers.
+                        </p>
+                    </li>                    
+    
+                </ol>
+            </div>
+   
+        </div>
+
+        <div class="row text-white row-margin">
+            <div class="h2 text-white">
+                Data Download and Selection
+            </div>
+        
+            <p class="small-text">
+                The data was extracted using the <b>API provided by INEGI</b>, specifically from the Indicators Bank under <b>"GDP and National Accounts"</b>, focusing on the <b>"Quarterly Gross Domestic Product by Economic Activity (in millions of pesos at 2013 prices)"</b> for the Mexican economy, covering data from the first quarter of 1993 to the first quarter of 2023. This provided a comprehensive set of quarterly observations.
+            </p>
+        
+            <p class="small-text">
+                However, to align with the objective of estimating the national GDP while considering current economic relationships, it was necessary to narrow the time frame to capture more recent patterns and trends. Recognizing potential structural and economic shifts over the last three decades, the dataset was refined to include data from the second quarter of 2008 onwards, encompassing the last 15 years up to the most recent available period (first quarter of 2023). This selection of 60 quarters enables the model to better reflect the current interactions between economic activities and GDP, minimizing the influence of past economic events and policies that may no longer be relevant.
+            </p>
+        
+            <p class="small-text">
+                In conclusion, this methodology ensures that the model adapts to the contemporary state of the Mexican economy, thereby enhancing the relevance and precision of its predictions.
+            </p>
+        
+        </div>        
+
+        <div class="row text-white row-margin">
+            
+            <div class="h2 text-white mb-5">
+                Descriptive Analysis of the Data
+            </div>            
+
+            <div class="row px-0 pieChartRow">
+                <!-- Left Column -->
+                <div class="col-12 col-lg-5 align-content-center">
+                    <div class="h3 text-primary text-start">
+                        Contribution of Each Sector to GDP
+                    </div>
+                    
+                    <p class="small-text m-0">
+                        In the following donut chart, we observe that the sectors are distributed as follows: the primary sector represents 3.4%, the secondary sector 33.6%, and the tertiary sector 63% of the total. This distribution highlights the dominance of the tertiary sector in the economic structure, indicating a focus on services and activities related to social assistance, education, and temporary accommodation.
+                    </p>                    
+                </div>
+
+                <!-- Right Column -->
+                <div class="responsive-iframe pieChart col-12 col-lg-7">
+                    <iframe class="iframe" src="img/PieChartPibPorSector.html"></iframe>
+                    <div class="legends">
+                        <div class="legend-container"><div class="square"></div><div>Primary Sector</div></div>
+                        <div class="legend-container"><div class="square"></div><div>Secondary Sector</div></div>
+                        <div class="legend-container"><div class="square"></div><div>Tertiary Sector</div></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row px-0 mb-0">
+                <!-- Right Column -->
+                <div class="responsive-iframe covMatrix col-12 col-lg-7 order-2 order-lg-1">
+                    <br><iframe src="img/correlationMatrix.html" class="iframe d-none d-md-block" frameborder="0"></iframe>
+                    <br><iframe src="img/correlationMatrixMini.html" class="iframe d-md-none d-block" frameborder="0"></iframe>
+                </div>
+
+                <!-- Left Column -->
+                <div class="col-12 col-lg-5 align-content-center order-1 order-lg-2">
+                    
+                    <div class="h3 text-primary text-start">
+                        Correlation Matrix (%)
+                    </div>
+
+                    <p class="small-text m-0"> From the correlation matrix, we can observe a very strong positive direct relationship between the independent variables <b>X₉ ("Wholesale Trade")</b>, <b>X₁₀ ("Financial and Insurance Services")</b>, and <b>X₁₁ ("Transportation and Storage")</b> with the <b>National GDP (Y)</b>, each showing a correlation exceeding 90%.</p>
+                    <p class="small-text m-0"> <br>This suggests that these variables will likely be key candidates for inclusion in the final model to estimate the national GDP.</p>
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="row text-white row-margin">
+            
+            <div class="h2 text-white" id="variables">
+                Multicollinearity
+            </div>
+            
+            <p class="small-text">
+                In the development process of our multiple regression model, it is crucial to assess multicollinearity between the independent variables, as its presence can affect the stability of the coefficients and the interpretation of the results. Multicollinearity occurs when two or more independent variables are highly correlated with each other, which can hinder the accurate estimation of each variable's individual effects on the dependent variable.
+            </p>
+            
+            <p class="small-text">
+                To detect and address multicollinearity, we use the Variance Inflation Factor (VIF), a statistical tool that measures how much the variances of the coefficients are inflated due to the correlation between the independent variables. A VIF value greater than or equal to 10 is generally considered indicative of significant multicollinearity.
+            </p>
+            
+            <p class="small-text">
+                The procedure followed in this analysis is as follows: we calculate the VIFs for all variables and, if the VIF of one or more variables is greater than or equal to 10, we remove the variable with the highest VIF from the model. We then recalculate the VIFs for the remaining variables and repeat this elimination process until all VIFs are below 10. This approach ensures that the variables in the model are sufficiently independent from each other, improving the stability and accuracy of the regression model.
+            </p>
+            
+            <div class="h3 text-start">
+                <br>Results
+            </div>
+            
+            <p class="small-text">
+                After performing six elimination iterations, the following variables were discarded due to their high multicollinearity:
+            </p>            
+
+            <div>
+                <ul class="small-text">
+                    <li>
+                        Transport and Storage
+                    </li>
+            
+                    <li>
+                        Financial and Insurance Services
+                    </li>
+            
+                    <li>
+                        Food Industry
+                    </li>
+            
+                    <li>
+                        Mining
+                    </li>
+            
+                    <li>
+                        Wholesale Trade
+                    </li>
+                </ul>
+            </div>
+            
+            <p class="small-text">
+                <br>Finally, the model retained the following independent variables, which were selected for their low multicollinearity and relevance in the analysis:
+            </p>
+            
+            <div>
+                <ul class="small-text">
+                    <li>
+                        Agriculture
+                    </li>
+            
+                    <li>
+                        Generation, Transmission, and Distribution of Electric Power
+                    </li>
+            
+                    <li>
+                        Construction
+                    </li>
+            
+                    <li>
+                        Beverage and Tobacco Manufacturing
+                    </li>
+            
+                    <li>
+                        Machinery and Equipment Manufacturing
+                    </li>
+            
+                    <li>
+                        Chemical Product Manufacturing
+                    </li>
+            
+                    <li>
+                        Health and Social Assistance Services
+                    </li>
+            
+                    <li>
+                        Educational Services
+                    </li>
+            
+                    <li>
+                        Temporary Accommodation Services
+                    </li>
+            
+                    <li>
+                        Repair and Maintenance Services
+                    </li>
+                </ul>
+            </div>
+
+            <p class="small-text mb-5">
+                <br>Below is the summary table of the sixth iteration, which includes the results of the remaining variables after removing those with high multicollinearity. This table shows for each variable: its constant value, its 95% confidence interval, and the corresponding VIF. These results allow for evaluating the accuracy of the coefficients and the independence of the variables in the final model.
+            </p>   
+            
+            <div>
+                <div class="dataframe-container small-text" style="font-size:11px;">
+                    <table class="dataframe m-0 table table-bordered table-striped">
+                        <thead>
+                          <tr class="text-start">
+                            <th class="col-term">Term</th>
+                            <th class="col-coef">Coef</th>
+                            <th class="col-ci">95% CI</th>
+                            <th class="col-vif">VIF</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>const</td>
+                            <td>-3,163,366.66</td>
+                            <td>-9,837,427.26 &lt; β<sub>0</sub> &lt; 3,510,693.93</td>
+                            <td>1.00</td>
+                          </tr>
+                          <tr>
+                            <td>Agriculture</td>
+                            <td>2.96</td>
+                            <td>1.27 &lt; β<sub>1</sub> &lt; 4.65</td>
+                            <td>3.25</td>
+                          </tr>
+                          <tr>
+                            <td>Generation, Transmission, and Distribution of Electric Power</td>
+                            <td>8.70</td>
+                            <td>4.87 &lt; β<sub>2</sub> &lt; 12.52</td>
+                            <td>1.94</td>
+                          </tr>
+                          <tr>
+                            <td>Construction</td>
+                            <td>3.02</td>
+                            <td>1.45 &lt; β<sub>3</sub> &lt; 4.58</td>
+                            <td>4.21</td>
+                          </tr>
+                          <tr>
+                            <td>Beverage and Tobacco Manufacturing</td>
+                            <td>14.14</td>
+                            <td>6.54 &lt; β<sub>4</sub> &lt; 21.74</td>
+                            <td>6.03</td>
+                          </tr>
+                          <tr>
+                            <td>Machinery and Equipment Manufacturing</td>
+                            <td>9.09</td>
+                            <td>2.35 &lt; β<sub>5</sub> &lt; 15.83</td>
+                            <td>1.95</td>
+                          </tr>
+                          <tr>
+                            <td>Chemical Product Manufacturing</td>
+                            <td>-11.31</td>
+                            <td>-20.63 &lt; β<sub>6</sub> &lt; -1.99</td>
+                            <td>7.34</td>
+                          </tr>
+                          <tr>
+                            <td>Health and Social Assistance Services</td>
+                            <td>14.13</td>
+                            <td>7.31 &lt; β<sub>7</sub> &lt; 20.94</td>
+                            <td>5.24</td>
+                          </tr>
+                          <tr>
+                            <td>Educational Services</td>
+                            <td>10.92</td>
+                            <td>5.22 &lt; β<sub>8</sub> &lt; 16.62</td>
+                            <td>3.95</td>
+                          </tr>
+                          <tr>
+                            <td>Temporary Accommodation Services</td>
+                            <td>3.77</td>
+                            <td>0.19 &lt; β<sub>9</sub> &lt; 7.35</td>
+                            <td>4.23</td>
+                          </tr>
+                          <tr>
+                            <td>Repair and Maintenance Services</td>
+                            <td>2.38</td>
+                            <td>-16.73 &lt; β<sub>10</sub> &lt; 21.49</td>
+                            <td>2.91</td>
+                          </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="row text-black row-margin">
+
+            <div class="h2 text-white">
+                Best Models
+            </div>
+            
+            <p class="small-text text-white">
+                Although we have eliminated multicollinearity in our model, this does not guarantee that all the remaining variables are suitable for inclusion in the final model. The next step is to select the linear regression model with the best performance. If there are two or more models with nearly identical performance, the one with the smallest standard deviation will be chosen, as this indicates greater stability in predictions.
+            </p>
+            
+            <p class="small-text text-white">
+                The performance of a linear regression model is evaluated using the adjusted R-squared (R² adjusted), which takes into account both the goodness of fit and the number of independent variables, penalizing the inclusion of variables that do not add value to the model.
+            </p>
+            
+            <p class="small-text text-white mb-5">
+                Before selecting the optimal model, we present the results table showing the two best models for each number of independent variables, starting from the model with 1 independent variable up to the model with all the variables. This table contains the adjusted R-squared (R² adjusted) and the standard deviation of each model, allowing for a comparison between different variable configurations.
+            </p>            
+
+            <div>
+                <div class="dataframe-container">
+                    <table class="dataframe table table-bordered m-0 table-striped small-text" style="font-size:11px;">
+                        <thead>
+                          <tr class="text-center text-black">
+                            <th>Vars</th>
+                            <th>Agriculture</th>
+                            <th>Generation, Transmission, and Distribution of Electrical Energy</th>
+                            <th>Construction</th>
+                            <th>Food and Tobacco Manufacturing</th>
+                            <th>Machinery and Equipment Manufacturing</th>
+                            <th>Chemical Product Manufacturing</th>
+                            <th>Health and Social Assistance Services</th>
+                            <th>Educational Services</th>
+                            <th>Temporary Accommodation Services</th>
+                            <th>Repair and Maintenance Services</th>                        
+                            <th>R sq</th>
+                            <th>R sq (adj)</th>
+                            <th>S</th>
+                          </tr>
+                        </thead>
+                        <tbody class="text-center">
+                          <tr>
+                            <td>1</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>X</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>68.6145</td>
+                            <td>68.0733</td>
+                            <td>818154.4375</td>
+                          </tr>
+                          <tr>
+                            <td>1</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>X</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>56.4381</td>
+                            <td>55.6870</td>
+                            <td>963882.4422</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>X</td>
+                            <td></td>
+                            <td></td>
+                            <td>X</td>
+                            <td></td>
+                            <td>85.1066</td>
+                            <td>84.5841</td>
+                            <td>568517.2155</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>X</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>X</td>
+                            <td></td>
+                            <td></td>
+                            <td>83.8695</td>
+                            <td>83.3035</td>
+                            <td>591659.3486</td>
+                          </tr>
+                          <tr>
+                            <td>3</td>
+                            <td></td>
+                            <td></td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>X</td>
+                            <td></td>
+                            <td></td>
+                            <td>90.6083</td>
+                            <td>90.1052</td>
+                            <td>455471.9274</td>
+                          </tr>
+                          <tr>
+                            <td>3</td>
+                            <td></td>
+                            <td></td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td></td>
+                            <td>X</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>90.3428</td>
+                            <td>89.8254</td>
+                            <td>461867.1946</td>
+                          </tr>
+                          <tr>
+                            <td>4</td>
+                            <td></td>
+                            <td></td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td></td>
+                            <td></td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td></td>
+                            <td></td>
+                            <td>93.5618</td>
+                            <td>93.0936</td>
+                            <td>380526.2708</td>
+                          </tr>
+                          <tr>
+                            <td>4</td>
+                            <td></td>
+                            <td></td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td></td>
+                            <td>X</td>
+                            <td></td>
+                            <td>X</td>
+                            <td></td>
+                            <td></td>
+                            <td>93.2450</td>
+                            <td>92.7537</td>
+                            <td>389777.0194</td>
+                          </tr>
+                          <tr>
+                            <td>5</td>
+                            <td></td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td></td>
+                            <td></td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td></td>
+                            <td></td>
+                            <td>95.2483</td>
+                            <td>94.8083</td>
+                            <td>329923.7804</td>
+                          </tr>
+                          <tr>
+                            <td>5</td>
+                            <td></td>
+                            <td></td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td></td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td></td>
+                            <td></td>
+                            <td>94.7064</td>
+                            <td>94.2163</td>
+                            <td>348226.9247</td>
+                          </tr>
+                          <tr>
+                            <td>6</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td></td>
+                            <td></td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td></td>
+                            <td></td>
+                            <td>96.1220</td>
+                            <td>95.6830</td>
+                            <td>300850.7448</td>
+                          </tr>
+                          <tr>
+                            <td>6</td>
+                            <td></td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td></td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td></td>
+                            <td></td>
+                            <td>95.7653</td>
+                            <td>95.2859</td>
+                            <td>314383.4145</td>
+                          </tr>
+                          <tr>
+                            <td>7</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td></td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td></td>
+                            <td></td>
+                            <td>96.4922</td>
+                            <td>96.0200</td>
+                            <td>288868.4403</td>
+                          </tr>
+                          <tr>
+                            <td>7</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td></td>
+                            <td></td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td></td>
+                            <td>96.3713</td>
+                            <td>95.8829</td>
+                            <td>293803.2787</td>
+                          </tr>
+                          <tr>
+                            <td>8</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td></td>
+                            <td></td>
+                            <td>96.7540</td>
+                            <td>96.2449</td>
+                            <td>280589.7974</td>
+                          </tr>
+                          <tr>
+                            <td>8</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td></td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td></td>
+                            <td>96.6875</td>
+                            <td>96.1679</td>
+                            <td>283449.9406</td>
+                          </tr>
+                          <tr>
+                            <td>9</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td></td>
+                            <td>97.0424</td>
+                            <td>96.5100</td>
+                            <td>270503.0392</td>
+                          </tr>
+                          <tr>
+                            <td>9</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td></td>
+                            <td>X</td>
+                            <td>96.7769</td>
+                            <td>96.1967</td>
+                            <td>282382.7720</td>
+                          </tr>
+                          <tr>
+                            <td>10</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>97.0461</td>
+                            <td>96.4433</td>
+                            <td>273074.7138</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                </div>
+
+    
+                <div class="small-text text-white mt-4">
+                    The two best models obtained are as follows:
+                
+                    <ul>
+                        <br>
+                        <li>
+                            Model with 9 variables (excluding the "Repair and Maintenance Services" variable):
+                
+                            <ul>
+                                <li>
+                                    Adjusted R²: 96.51%
+                                </li>
+                                <li>
+                                    Standard Deviation: 270,503.0392
+                                </li>
+                            </ul>
+                
+                        </li>
+                        <br>
+                        <li>
+                            Model with 10 variables:
+                
+                            <ul>
+                                <li>
+                                    Adjusted R²: 96.4433%
+                                </li>
+                                <li>
+                                    Standard Deviation: 273,074.7138
+                                </li>
+                            </ul>
+                
+                        </li>
+                
+                    </ul>
+                
+            </div>         
+
+            <p class="small-text text-white">
+                <br>When comparing both models, we can observe that the 9-variable model has slightly better performance (96.51% versus 96.4433%) and also presents a lower standard deviation, making it more stable in its predictions.
+            </p>
+            
+            <p class="small-text text-white">
+                Therefore, the selected optimal model is the 9-variable model, which excludes the "Repair and Maintenance Services" variable, as it meets the performance and stability criteria.
+            </p>            
+            
+        </div>
+
+        <div class="row text-white row-margin">
+
+            <div class="h2 text-white" id="modelo">
+                Selected Model
+            </div>
+            
+            <p class="small-text">
+                The selected model is the 9-variable model. This model is considered optimal due to its superior performance and lower standard deviation compared to other models tested. The variables that form part of this model are as follows, where each represents a category of the economy that influences the National GDP (Ŷ):
+            </p>
+            
+            <div>
+                <ul class="small-text">
+            
+                    <li>
+                        Ŷ: National GDP
+                    </li>
+            
+                    <li>
+                        X₁: Agriculture
+                    </li>
+            
+                    <li>
+                        X₂: Generation, Transmission, and Distribution of Electrical Energy
+                    </li>
+            
+                    <li>
+                        X₃: Construction
+                    </li>
+            
+                    <li>
+                        X₄: Beverage and Tobacco Industry
+                    </li>
+            
+                    <li>
+                        X₅: Machinery and Equipment Manufacturing
+                    </li>
+            
+                    <li>
+                        X₆: Chemical Product Manufacturing
+                    </li>
+            
+                    <li>
+                        X₇: Health and Social Assistance Services
+                    </li>
+            
+                    <li>
+                        X₈: Educational Services
+                    </li>
+            
+                    <li>
+                        X₉: Temporary Accommodation Services
+                    </li>
+            
+                </ul>
+            </div>            
+
+            <p class="small-text">
+                This set of variables represents a significant sample of key sectors of the national economy that contribute to GDP growth, and it has been determined that they are the most relevant for predicting its behavior.
+            </p>
+            
+            <div class="h3 text-start mt-5">
+                Model Equation:
+            </div>
+            
+            <div class="small-text">
+                Ŷ = -3117480.31 +2.99X₁ +8.7X₂ +3.1X₃ +14.52X₄ +8.96X₅ -11.18X₆ +14.11X₇ +10.83X₈ +3.84X₉
+            </div>
+            
+            <div>
+                <br>
+                <ul class="small-text">
+                    <li>
+                        Model Performance (Adjusted R²): 96.51%
+                    </li>
+            
+                    <li>
+                        Model Variability (R²): 97.04%
+                    </li>
+                </ul>
+            </div>            
+
+        </div>
+
+        <div class="row text-white small-text row-margin">
+
+            <div class="h2 text-white">
+                Significance Test
+            </div>
+            
+            <div>
+                <p>
+                    The significance test of the regression is used to determine if there is a linear relationship between the response variable (in this case, National GDP) and the independent variables. The corresponding hypotheses for this test are:
+                </p>
+            
+                <ul>
+                    <li>
+                        <i>H₀</i>: β₁ = 0 (The regression is not significant, meaning at least one of the independent variables does not show a relationship).
+                    </li>
+            
+                    <li>
+                        <i>H₁</i>: β₁ ≠ 0 (The regression is significant, meaning the independent variables show a relationship).
+                    </li>
+                </ul>
+            </div>
+            
+            <div>
+                Rejecting H₀ if:
+            
+                <ul>
+                    <li>
+                        EP > F<sub>α,k,n-k-1</sub>
+                    </li>
+                </ul>
+            </div>            
+
+            <p>
+                Where:
+            </p>
+
+            <div>
+                <ul>
+                    <li>
+                        α is the significance level (in this case 0.05), which defines the threshold for rejecting the null hypothesis H<sub>0</sub>.
+                    </li>
+                    <li>
+                        k is the number of predictors (independent variables) in your multiple regression model (k=9).
+                    </li>
+    
+                    <li>
+                        n-k-1 is the degrees of freedom associated with the error (residuals), based on the sample size n and the number of predictors k <nobr>(n=60, n-k-1=50)</nobr>.
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="h3 text-start">
+                <br>Test Result
+            </div>
+            
+            <p>
+                In this case, our result was 182.282 > 2.0734, so we conclude that we have a significant regression, and we proceed with the analysis of the confidence intervals of the constant in our model.
+            </p>
+
+        </div>
+
+        <div class="row row-margin small-text text-white">
+
+            <div class="h2 text-white">
+                Regression Through the Origin?
+            </div>
+            
+            <div class="mb-3">
+                At this point, we will analyze the constant of the model to determine if it is appropriate to force the model to pass through the origin. The decision depends on whether the confidence interval of the constant includes zero; if so, it might be considered to eliminate the constant and perform a regression without an intercept.
+            </div>
+            
+            <div class="mb-3">
+                The confidence intervals of the constant are: -9837427.2603 < b<sub>0</sub> < 3510693.9333, so 0 is part of the interval. This suggests a possible regression through the origin. However, given the context of the model and the nature of the national GDP, we will not remove the constant. It is important to consider that although the variables in the model explain a large proportion of the GDP, they do not represent all the factors influencing the national economy. Assigning a value of zero to the GDP when all explanatory variables are zero would not be realistic, as it implies there are no other economic factors at play.
+            </div>
+            
+            <div class="mb-3">
+                Therefore, we will keep the constant in the model to reflect a more complete and accurate relationship between the variables and the national GDP.
+            </div>            
+
+        </div>
+
+        <div class="row row-margin small-text text-white">
+
+            <div class="h2 text-white" id="supuestos">
+                Assumptions of the Model
+            </div>
+            
+            <p>
+                The next step is to ensure that the assumptions of the model residuals are met so that, if these assumptions hold, we can be confident in the reliability of the model.
+            </p>            
+
+            <div>
+                <div class="h3 text-start">
+                    <br>1. Normality of Residuals with Zero Mean
+                </div>
+                
+                <p>
+                    It is essential to ensure that the model's residuals are normally distributed and have a mean close to zero. There are two approaches to verify this assumption: the graphical method and the analytical method. In this project, we will use both approaches to have both a visual and statistical confirmation of the normality of the residuals.
+                </p>
+                
+                <div class="h4">
+                    <br>Graphical Method
+                </div>
+                
+                <p>
+                    For the graphical validation, we will use the QQ plot (quantile-quantile plot) and a histogram of the residuals. In the QQ plot, the "x" axis represents the theoretical quantiles of a normal distribution, while the "y" axis shows the observed quantiles of the residuals. A trend line is superimposed on the plot to help us visualize the spread of the points: the closer the points are to the line, the more normal the distribution of the residuals will be. Additionally, a histogram of the residuals allows us to assess the shape of their distribution and verify that it is centered around zero.
+                </p>
+                
+                <div class="h5"><br>QQ Plot</div>
+                <p>
+                    In the obtained QQ plot, we can observe that the points are largely aligned with the trend line, indicating that the residuals follow a normal distribution.
+                </p>                
+
+                <div class="responsive-iframe qqplot">
+                    <br><iframe src="img/qqplot.html" class="iframe" frameborder="0"></iframe>
+                </div>
+
+                <div class="h5"><br>Histogram</div>
+                <p>
+                    The histogram of the residuals also shows an approximately symmetric shape centered around zero. Both graphs support the validity of the assumption of normality with a mean of zero for the residuals.
+                </p>                
+
+                <div class="responsive-iframe qqplot">
+                    <br><iframe src="img/histResVsFreq.html" class="iframe" frameborder="0"></iframe>
+                </div>
+
+                <div class="h4">
+                    <br>Analytical Method
+                </div>
+                
+                <p>
+                    Complementarily, we applied the Chi-square normality test. This statistical test allows us to verify whether the distribution of the residuals significantly deviates from a normal distribution. The null hypothesis of this test states that the residuals follow a normal distribution with a mean of 0, while the alternative hypothesis indicates otherwise.
+                </p>
+                
+                <p>
+                    Our Chi-square test results were: 4.8779 < 11.0705. These results show that there is not enough evidence to reject the hypothesis of normality with a mean of 0 for the residuals. This analytically confirms that the residuals come from a normal distribution with a mean of zero, thereby validating one of the key assumptions for the model's reliability.
+                </p>
+                
+                <div class="h3 text-start">
+                    <br>2. Constant Variance Assumption of Residuals
+                </div>
+                
+                <p>
+                    A second crucial assumption in linear regression is the constant variance of residuals, also known as homoscedasticity. This means that the variability of errors should be constant across all prediction values. If this assumption is not met (heteroscedasticity), it may indicate that the model struggles to fit certain regions of the data, which would affect the accuracy and validity of predictions.
+                </p>
+                
+                <div class="h4">
+                    <br>Graphical Verification with the Versus Fit Plot
+                </div>
+                
+                <p>
+                    To assess this assumption, we use the Versus Fit Plot, a scatter plot where the "x" axis represents the model’s estimated responses, and the "y" axis shows the residuals. If the points on this graph are randomly scattered and show no clear pattern or trend, we can assume that the variance of residuals is constant. On the other hand, if the points exhibit a specific shape or pattern (e.g., a fan or cone shape), this would indicate heteroscedasticity.
+                </p>
+                
+                <p>
+                    <br>Upon observing the Versus Fit Plot, we note that the points are uniformly distributed around the horizontal axis without a discernible pattern. This indicates that the residuals have constant variance across all estimates of our model, confirming that the homoscedasticity assumption holds.
+                </p>                
+
+                <div class="responsive-iframe versusFitPlot">
+                    <br><iframe src="img/versusFitPlot.html" class="iframe" frameborder="0"></iframe>
+                </div>
+
+            </div>
+
+            <div class="h3 text-start">
+                <br>3. Assumption of Uncorrelated Errors
+            </div>
+            
+            <p>
+                For a linear regression model to be valid, the errors or residuals must be independent of each other. This means that the value of one error should not depend on the value of previous errors; in other words, the errors must be uncorrelated. If correlation is present, the model may be leaving unexplained patterns, which could affect the accuracy of its predictions.
+            </p>
+            
+            <div class="h4">
+                <br>Graphical Method: Versus Order Plot
+            </div>
+            
+            <p>
+                One way to validate the uncorrelation of errors is through the Versus Order Plot. In this graph, the "x" axis represents the position of each observation in temporal order (1, 2, ..., n), and the "y" axis shows the value of the residuals. This graph helps identify whether the errors follow any pattern based on time or observation order. If no clear pattern or trend is observed in the dispersion of points, we can assume that the errors are uncorrelated.
+            </p>
+            <p>
+                <br>Upon observing the Versus Order Plot, we note that no discernible pattern or obvious trend is present in the residuals over time, which suggests that the errors are uncorrelated. For this reason, we conclude that the assumption of uncorrelated errors is met based on the graphical analysis.
+            </p>
+
+            <div class="responsive-iframe versusOrderPlot">
+                <br><iframe src="img/versusOrderPlot.html" class="iframe" frameborder="0"></iframe>
+            </div>
+            
+            <div class="h4">
+                <br>Analytical Method: Durbin-Watson Test
+            </div>
+            
+            <p>
+                To complement the validation of this assumption, we used the Durbin-Watson test, which is a statistical test that detects the presence of first-order autocorrelation in the errors of a regression model. This test is useful in contexts where errors are recorded at regular time intervals and can confirm whether there is correlation between consecutive errors.
+            </p>
+            
+            <p>
+                <br>In this case, the results of the Durbin-Watson test were inconclusive, so we relied on the visual analysis obtained from the Versus Order Plot. Since the graph does not show any pattern of correlation, we conclude that the assumption of uncorrelated errors holds.
+            </p>            
+
+        </div>
+
+        <div class="row small-text text-white row-margin">
+
+            <div class="h2 text-white">
+                Outlier Detection
+            </div>
+            
+            <p>
+                Identifying outliers is crucial in regression analysis, as they can negatively influence the fit and accuracy of the model. To address this issue, we applied a standardized residual method, which allows us to assess if any observation deviates significantly from the general pattern of the data.
+            </p>
+            
+            <div class="h3 text-start">
+                <br>Method Description
+            </div>
+            
+            <p>
+                The standardized residual method involves calculating an adjusted residual for each observation, taking into account its influence on the model. In this way, we can detect unusual observations. In this analysis, an observation is considered an outlier if its absolute standardized residual exceeds a value of 3.
+            </p>
+            
+            <div class="h3 text-start">
+                <br>Detection Process
+            </div>
+            
+            <div>
+                <ul>
+                    <li>
+                        Calculation of Standardized Residuals: The standardized residual for each observation is calculated.
+                    </li>
+            
+                    <li>
+                        Outlier Detection Criterion: Observations with an absolute standardized residual greater than 3 are considered outliers.
+                    </li>
+                </ul>
+            </div>
+            
+            <p>
+                <br>In this case, the analysis did not detect any outliers, indicating that all observations are within an acceptable range of variability. This means there are no extreme values that could distort the interpretation of the model.
+            </p>
+            
+            <p>
+                The absence of outliers allows us to state that the model is stable and reliable, adequately representing the relationship between the variables without being affected by unusual data points.
+            </p>
+
+        </div>
+
+        <div class="row row-margin small-text text-white">
+            <div class="h2 text-white" id="conclusion">
+                Model Conclusion
+            </div>
+            
+            <p>
+                After conducting a thorough analysis of our regression model, we evaluated and verified each of the fundamental assumptions: normality of residuals, constant variance, independence of errors, and absence of outliers. Each of these steps contributed to confirming that our model meets the necessary statistical requirements to be considered robust and reliable.
+            </p>
+            
+            <p>
+                The absence of patterns or trends in the residuals and the confirmation of constant variance indicate that the model consistently captures the relationship between the variables. Additionally, the verification of uncorrelated errors and the lack of outlier observations reinforce that the model is not distorted by external or unusual influences in the data.
+            </p>
+            
+            <p>
+                Taken together, these results validate that our model is statistically solid and suitable for making reliable predictions, offering a high degree of accuracy and performance in its practical application.
+            </p>
+            
+            <div class="h3 text-start">
+                <br>Model vs. Actual Values
+            </div>
+            
+            <p>
+                Below, we present a line chart comparing the actual values with the estimated values from the model, allowing us to visually assess its accuracy. Overlaying both series makes it easy to observe how closely the model follows the trends and variations of the real data, providing an intuitive view of its predictive effectiveness.
+            </p>            
+    
+            <div class="responsive-iframe modelPlot">
+                <br><iframe src="img/modelPlot.html" class="iframe d-none d-md-block" frameborder="0"></iframe>
+                <br><iframe src="img/modelPlotMini.html" class="iframe d-md-none d-block" frameborder="0"></iframe>
+            </div>
+        </div>
+
+        <div class="row row-margin text-white">
+            
+            <div class="h2">
+                Conclusion
+            </div>
+
+            <div class="text-white small-text">
+                In this analysis, the selected <b>9-variable regression model</b> provides an optimal solution for estimating the <b>National GDP (Ŷ)</b> based on key economic sectors. This model outperforms others tested, demonstrating a superior performance with an <b>Adjusted R² of 96.51%</b> and an <b>R² of 97.04%</b>, indicating that it explains nearly all of the variability in GDP growth. The model includes the following economic sectors: <b>Agriculture</b>, <b>Generation, Transmission and Distribution of Electrical Energy</b>, <b>Construction</b>, <b>Beverage and Tobacco Industry</b>, <b>Machinery and Equipment Manufacturing</b>, <b>Chemical Product Manufacturing</b>, <b>Health and Social Assistance Services</b>, <b>Educational Services</b>, and <b>Temporary Accommodation Services</b>. These sectors were identified as the most significant contributors to national GDP growth.
+            </div>
+            
+            <div class="text-white small-text">
+                <br>Each variable's positive or negative impact on GDP is represented in the model's equation, with specific coefficients showing the degree to which each sector influences GDP growth. For example, the positive coefficients for sectors such as <b>Construction (X₃)</b> and <b>Health and Social Assistance Services (X₇)</b> reflect their significant contributions to national economic expansion, while the negative coefficient for <b>Chemical Product Manufacturing (X₆)</b> suggests a less pronounced impact.
+            </div>
+            
+            <div class="text-white small-text">
+                <br>Through careful validation, the model satisfies all <b>statistical assumptions</b>, including <b>normality of residuals</b>, <b>constant variance</b>, <b>independence of errors</b>, and <b>absence of outliers</b>. This ensures the robustness and reliability of the model for making informed predictions about Mexico's economic performance.
+            </div>
+            
+            <div class="text-white small-text">
+                <br>Furthermore, the model's accuracy was confirmed through a comparison of <b>predicted values</b> with <b>actual GDP data</b>, showing a strong alignment with real-world trends. The lack of significant patterns or trends in residuals further supports the model's credibility.
+            </div>
+            
+            <div class="text-white small-text">
+                <br>In conclusion, the selected model offers a highly reliable and precise tool for estimating <b>GDP growth</b> and understanding the dynamics of key economic sectors. It provides valuable insights for <b>policymakers</b> and <b>economists</b> seeking to predict and manage national economic performance. By leveraging this model, stakeholders can make <b>data-driven decisions</b> that foster sustainable economic development and enhance strategic planning.
+            </div>                    
+
+        </div>
+
+        <div class="row row-margin small-text">
+
+            <div class="h2 text-center mb-5">
+                Further Information
+            </div>
+
+            <div class="further-info-container row-margin">
+                <div class="further-info col-12 col-md-8 col-lg-6">
+                    <div class="h4 text-white">
+                        View Github
+                    </div>
+                    <div class="small-text text-white">
+                        If you're interested in exploring the code behind the module and seeing its application, feel free to visit the project's GitHub repository. The code and implementation details are available for further exploration
+                    </div>
+    
+                    <a href="https://github.com/PPuertos/Regression-Modeling/blob/main/PIBMexicoRegresion/pibMexicoAnalisisRegresion.ipynb" target="_blank">
+                        Visit Repository
+                    </a>
+                </div>
+    
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+
+        <div class="h5 text-white">
+            References
+        </div>
+        
+        <ul class="text-white">
+            <li class="small-text">
+                National Institute of Statistics and Geography (INEGI). (2024). <b>National Accounts of Mexico</b>. Retrieved from [INEGI](https://www.inegi.org.mx)
+            </li>
+        
+            <li class="small-text">
+                Secretariat of Finance and Public Credit (SHCP). (2024). <b>Report on the Economic Situation, Public Finances, and Public Debt</b>. Retrieved from [SHCP](https://www.gob.mx/shcp)
+            </li>
+        
+            <li class="small-text row-margin">
+                National Chamber of the Transformation Industry (CANACINTRA). (2023). <b>Annual Report on Industrial Development in Mexico</b>. Retrieved from [CANACINTRA](https://www.canacintra.org.mx)
+            </li>
+        </ul>  
+        
+        <div class="small-text text-white mb-2 me-2 text-end">
+            <i>Francisco Puertos ⓒ 2024</i>
+        </div>
+
+    </footer>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+
+</html>
