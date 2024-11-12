@@ -1,5 +1,5 @@
 /* Border in the bottom of every section*/
-#home, #features, #value-proposition, #tech-used, #tutorial, #dashboard {
+#home, #features, #value-proposition, #tech-used, #tutorial, #dashboard, #footer {
     padding-left: 30px;
     padding-right: 30px;
 }
