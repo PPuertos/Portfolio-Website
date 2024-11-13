@@ -54,22 +54,26 @@ tr {
     align-items: center;
 }
 
-.legend-container:first-child, .legend-container:nth-child(2) {
+
+.legend-container:first-child, .legend-container:nth-child(2), .legend-container:nth-child(3) {
     margin-right: 10px;
 }
 
-.legend-container:first-child .square {
+.pact .square {
     background-color: rgb(101,110,242);
 }
 
-.legend-container:nth-child(2) .square {
+.sact .square {
     background-color: rgb(221,96,70);
 }
 
-.legend-container:nth-child(3) .square {
+.tact .square {
     background-color: rgb(92,201,154);
 }
 
+.taxes .square {
+    background-color: rgb(161, 102 , 242);
+}
 
 
 .legend-container .square {
@@ -77,12 +81,6 @@ tr {
     width: 12px;
     border: 1px solid black;
     margin-right: 3px;
-}
-
-.legends {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
 }
 
 .further-info {
@@ -127,6 +125,13 @@ tr {
     }
 
 
+    .legends > div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+
 }
 
 /* SM */
@@ -134,6 +139,12 @@ tr {
     .responsive-iframe .iframe {
         width: 100%;
         height: 60vw;
+    }
+
+    .legends {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
     }
 }
 
@@ -143,6 +154,12 @@ tr {
         width: 100%;
         height: 60vw;
     }
+
+    .legends {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
 }
 
 /* LG */
@@ -150,6 +167,12 @@ tr {
     .responsive-iframe .iframe {
         width: 100%;
         height: 48vw;
+    }
+
+    .legends {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
     }
 }
 
@@ -159,6 +182,12 @@ tr {
         width: 100%;
         height: 48vw;
     }
+
+    .legends {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
 }
 
 /* XXL */
@@ -167,6 +196,12 @@ tr {
         width: 100%;
         height: 48vw;
 
+    }
+
+    .legends {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
     }
 }
 

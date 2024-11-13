@@ -234,10 +234,23 @@
                 <!-- Right Column -->
                 <div class="responsive-iframe pieChart col-12 col-lg-7">
                     <iframe class="iframe" src="img/pieChartPibPorSector.html"></iframe>
-                    <div class="legends">
-                        <div class="legend-container"><div class="square"></div><div>Primary Sector</div></div>
-                        <div class="legend-container"><div class="square"></div><div>Secondary Sector</div></div>
-                        <div class="legend-container"><div class="square"></div><div>Tertiary Sector</div></div>
+
+                    <div class="legends d-sm-none">
+                        <div>
+                            <div class="legend-container pact"><div class="square"></div><div>Primary Act.</div></div>
+                            <div class="legend-container sact"><div class="square"></div><div>Secondary Act.</div></div>
+                        </div>
+                        <div>
+                            <div class="legend-container tact"><div class="square"></div><div>Tertiary Act.</div></div>
+                            <div class="legend-container taxes"><div class="square"></div><div>Net Taxes on Products</div></div>
+                        </div>
+                    </div>
+
+                    <div class="legends d-none d-sm-flex">
+                        <div class="legend-container pact"><div class="square"></div><div>Primary Act.</div></div>
+                        <div class="legend-container sact"><div class="square"></div><div>Secondary Act.</div></div>
+                        <div class="legend-container tact"><div class="square"></div><div>Tertiary Act.</div></div>
+                        <div class="legend-container taxes"><div class="square"></div><div>Net Taxes on Products</div></div>
                     </div>
 
                 </div>
@@ -1056,10 +1069,12 @@
                 <div class="h5"><br>Histogram</div>
                 <p>
                     The histogram of the residuals also shows an approximately symmetric shape centered around zero. Both graphs support the validity of the assumption of normality with a mean of zero for the residuals.
-                </p>                
+                </p>
 
-                <div class="responsive-iframe qqplot">
-                    <br><iframe src="img/histResVsFreq.html" class="iframe"></iframe>
+                <div class="responsive-iframe versusFitPlot">
+                    <br>
+                    <iframe class="d-none d-md-inline-block iframe" src="img/histResVsFreq.html"></iframe>
+                    <iframe class="d-md-none iframe pt-2" src="img/histResVsFreqMini.html"></iframe>
                 </div>
 
                 <div class="h4">
