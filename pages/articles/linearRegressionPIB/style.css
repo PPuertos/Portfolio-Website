@@ -60,7 +60,7 @@ tr {
 }
 
 .pact .square {
-    background-color: rgb(101,110,242);
+    background-color: rgb(161, 102 , 242);
 }
 
 .sact .square {
@@ -68,11 +68,11 @@ tr {
 }
 
 .tact .square {
-    background-color: rgb(92,201,154);
+    background-color: rgb(101,110,242);
 }
 
 .taxes .square {
-    background-color: rgb(161, 102 , 242);
+    background-color: rgb(92,201,154);   
 }
 
 
